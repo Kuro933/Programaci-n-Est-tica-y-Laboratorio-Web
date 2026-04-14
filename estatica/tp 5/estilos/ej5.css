@@ -1,0 +1,17 @@
+footer {
+    background-color: black;
+    color: white;
+}
+header {
+    background-color: aqua;
+}
+h1 {
+    color: blue;
+    font-family: Arial;
+}
+p {
+    font-style: italic;
+}
+li {
+    font-style: italic;
+}
