@@ -1,0 +1,82 @@
+/* Reset mínimo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* Estructura */
+header {
+  background-color: #333;
+  color: white;
+}
+
+nav {
+  background-color: #ddd;
+}
+
+section {
+  background: white;
+}
+
+/* Links */
+nav a {
+  color: #333;
+  text-decoration: none;
+}
+ /* PRACTICA */
+ /*a) Modificar el tamaño del HTML de la pagina a 18px todo se vuelve mas grande*/
+ /*b) Modificar el tamaño de la section solo hace que el texto de la section sea mas grande*/
+ /*c) Modificar el tamaño del main para que ocupe el tamaño asignado en % del ancho de la pagina y se centre*/
+ /*d) la diferencia entre % y vw es que % es relativo al ancho del contenedor padre y vw es relativo al ancho de la ventana*/
+ /*e) lo que pasa es que el texto contenido en el header si es mas grande que el header, no se ve ya que no tiene el fondo, el header no llega a cubrir el texto*/
+ /*f) el espacio entre los parrafos se mantien sin importar el tamaño de la fuente del html ya que estamos diciendo que las etiquetas p tienen un margin-bottom de 1rem*/
+ /*g) el padding cambia proporcionalmente. Porque em depende del tamaño del propio elemento (section). el espacio interno crece o disminuye junto con el texto.*/
+ /*h) % se adapta al layout, vw ignora el contenedor y puede romper diseños si no se controla, % es más seguro.*/
+ /*i) no, no se mantiene la apariencia de la pagina, se hizo imposible de ver la pagina, todo se volvio gigante y no se puede ver nada*/
+html {
+  font-size: 16em;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+section {
+  font-size: 18em;
+  padding: 2em;
+}
+
+section p {
+  font-size: 1.2em;
+}
+
+main {
+  width: 70%;
+  margin: auto;
+}
+
+header {
+  height: 10vh;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+nav {
+  width: 80vw;
+}
+
+

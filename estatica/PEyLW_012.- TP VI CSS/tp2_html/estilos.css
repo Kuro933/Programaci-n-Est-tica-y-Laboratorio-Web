@@ -1,0 +1,24 @@
+.enlace {
+    color: blue;
+    text-decoration: none;
+}
+.enlace:hover {
+    color: red;
+    font: bold;
+    font-style: italic;
+}
+
+.enlace:link {
+    color: darkgreen;
+    font: bold;
+}
+
+.enlace:visited {
+    color: red;
+    font: bold;
+}
+.enlace:active {
+    color: blue;
+    font: bold;
+    font-size: 2em;
+}
