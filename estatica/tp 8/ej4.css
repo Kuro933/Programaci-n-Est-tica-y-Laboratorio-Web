@@ -1,0 +1,65 @@
+.container {
+    background-color: lightgreen;
+    border: 6px solid black;
+    padding: 6px;
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(2, 1fr);
+    /*flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+}
+
+.box {
+    height: 200px;
+    border: 6px solid black;
+}
+
+.box01 {
+    background-color: red;
+}
+
+.box02 {
+    background-color: blue;
+}
+
+.box03 {
+    background-color: green;
+}
+
+.box04 {
+    background-color: yellow;
+}
+
+.box05 {
+    background-color: purple;
+}
+
+.box06 {
+    background-color: orange;
+}
+
+.box07 {
+    background-color: pink;
+}
+
+.box08 {
+    background-color: brown;
+}
+
+.box09 {
+    background-color: orange;
+}
+
+.box10 {
+    background-color: lightgray;
+}
+
+.box11 {
+    background-color: orangered;
+}
+
+.box12 {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,37 @@
+.container {
+    background-color: lightgreen;
+    border: 6px solid black;
+    padding: 6px;
+    display: flex;
+    gap: 6px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .box {
+     height: 200px;
+     border: 6px solid black;
+ }
+ 
+ #box1 {
+     background-color: red;
+     width: 45%;
+     display: flex flex-grow;
+     justify-content: center;
+ }
+ 
+ #box2 {
+     background-color: blue;
+     display: flex flex-grow;
+     width: 35%;
+     justify-content: center;
+ }
+ 
+ #box3 {
+     background-color: green;
+     /* text-align: center; */
+     display: flex flex-grow;
+     width: 20%;
+     justify-content: center;
+ }

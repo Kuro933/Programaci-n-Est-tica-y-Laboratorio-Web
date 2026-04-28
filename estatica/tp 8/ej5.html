@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club Deportivo Talapeca</title>
+    <link rel="stylesheet" href="ej5.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="topbar">
+        <div class="container topbar__inner">
+          <a class="brand" href="#">
+            <img class="brand__logo" src="imagenes/escudo.jpg" alt="CDTA" />
+            <div class="brand__text">
+              <span class="brand__name">CLUB DEPORTIVO</span>
+              <span class="brand__title">TALAPECA</span>
+              <span class="brand__tag">FUNDADO EN 1968</span>
+            </div>
+          </a>
+
+          <nav class="nav" aria-label="Navegación principal">
+            <a class="nav__link is-active" href="#inicio">INICIO</a>
+            <a class="nav__link" href="#club">EL CLUB</a>
+            <a class="nav__link" href="#noticias">NOTICIAS</a>
+            <a class="nav__link" href="#equipos">EQUIPOS</a>
+            <a class="nav__link" href="#partidos">PARTIDOS</a>
+            <a class="nav__link" href="#contacto">CONTACTO</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="principal" aria-label="Destacado">
+        <div class="principal__bg" aria-hidden="true"></div>
+
+        <div class="container principal__inner">
+          <div class="principal__content">
+            <h1 class="principal__title">
+              <span>SOMOS MÁS QUE UN CLUB,</span>
+              <span class="principal__title--accent">SOMOS UNA PASIÓN.</span>
+            </h1>
+
+            <p class="principal__lead">
+              Desde 1968, defendemos estos colores con pasión y dedicación.
+            </p>
+
+            <a class="btn" href="#club">CONOCÉ MÁS</a>
+          </div>
+
+          <div class="principal__player" aria-hidden="true">
+            <img
+              src="imagenes/jugador.jpg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="principal__dots" aria-hidden="true">
+          <span class="dot is-active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+
+      <section class="secciones_propias" aria-label="Accesos rápidos">
+        <div class="container secciones_propias__grid">
+          <article class="secciones_propias-card">
+            <div class="secciones_propias-card__icon" aria-hidden="true">🏆</div>
+            <h2 class="secciones_propias-card__title">NUESTRA HISTORIA</h2>
+            <p class="secciones_propias-card__text">
+              Conocé más sobre nuestro camino, nuestros logros y los momentos
+              que nos hicieron grandes.
+            </p>
+            <a class="secciones_propias-card__link" href="#club">LEER MÁS →</a>
+          </article>
+
+          <article class="secciones_propias-card">
+            <div class="secciones_propias-card__icon" aria-hidden="true">👥</div>
+            <h2 class="secciones_propias-card__title">CATEGORÍAS</h2>
+            <p class="secciones_propias-card__text">
+              No solo formamos jugadores, sino también personas con valores y un futuro mejor para el club.
+            </p>
+            <a class="secciones_propias-card__link" href="#equipos">VER EQUIPOS →</a>
+          </article>
+
+          <article class="secciones_propias-card">
+            <div class="secciones_propias-card__icon" aria-hidden="true">🗓️</div>
+            <h2 class="secciones_propias-card__title">PRÓXIMO PARTIDO</h2>
+            <div class="partido">
+              <div class="partido__teams">
+                <img
+                  src="imagenes/escudo.jpg"
+                  alt="CDH"
+                  class="partido__logo"
+                />
+                <span class="partido__vs">VS</span>
+                <img
+                  src="imagenes/rival.jpg"
+                  alt="Rival"
+                  class="partido__logo"
+                />
+              </div>
+              <p class="partido__meta">
+                Sábado 1 de junio · 16:00 hs<br />
+                Estadio Nuevo Talapeca
+              </p>
+              <a class="secciones_propias-card__link" href="#partidos">VER MÁS →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="noticias" class="main-grid">
+        <div class="container main-grid__inner">
+          <div class="main-grid__left">
+            <header class="section-head">
+              <h2 class="section-head__title">NOTICIAS DESTACADAS</h2>
+              <div class="section-head__line" aria-hidden="true"></div>
+            </header>
+
+            <div class="cards">
+              <article class="noticias_cards">
+                <img
+                  class="noticias_cards__img"
+                  src="imagenes/triunfo.jpg"
+                  alt="Triunfo en el clásico"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="noticias_cards__body">
+                  <h3 class="noticias_cards__title">Triunfo en el clásico</h3>
+                  <p class="noticias_cards__text">
+                    Talapeca venció 2-1 a Primordial FC en el clásico de la ciudad.
+                  </p>
+                  <a class="noticias_cards__link" href="#">LEER MÁS →</a>
+                </div>
+              </article>
+
+              <article class="noticias_cards">
+                <img
+                  class="noticias_cards__img"
+                  src="imagenes/juveniles.jpg"
+                  alt="Inferiores en gran nivel"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="noticias_cards__body">
+                  <h3 class="noticias_cards__title">Inferiores en gran nivel</h3>
+                  <p class="noticias_cards__text">
+                    El equipo juvenil logró un excelente resultado en la última fecha.
+                  </p>
+                  <a class="noticias_cards__link" href="#">LEER MÁS →</a>
+                </div>
+              </article>
+
+              <article class="noticias_cards">
+                <img
+                  class="noticias_cards__img"
+                  src="imagenes/hinchada.jpg"
+                  alt="La hinchada, siempre"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="noticias_cards__body">
+                  <h3 class="noticias_cards__title">La hinchada, siempre</h3>
+                  <p class="noticias_cards__text">
+                    Un marco inolvidable en el estadio que nos impulsa a seguir luchando por el triunfo.
+                  </p>
+                  <a class="noticias_cards__link" href="#">LEER MÁS →</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="main-grid__right" aria-label="Tabla de posiciones">
+            <header class="section-head section-head--compact">
+              <h2 class="section-head__title">TABLA DE POSICIONES</h2>
+              <div class="section-head__line" aria-hidden="true"></div>
+            </header>
+
+            <div class="tabla_posiciones">
+              <table class="tabla_posiciones">
+                <thead>
+                  <tr>
+                    <th>POS</th>
+                    <th>EQUIPO</th>
+                    <th class="tabla_posiciones__num">PTS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="is-leader">
+                    <td>1</td>
+                    <td>Club Deportivo Talapeca</td>
+                    <td class="tabla_posiciones__num">31</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Club Sportivo Primordial</td>
+                    <td class="tabla_posiciones__num">28</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Atlético del Valle</td>
+                    <td class="tabla_posiciones__num">24</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Club Deportivo San Antonio</td>
+                    <td class="tabla_posiciones__num">20</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Santarino FC</td>
+                    <td class="tabla_posiciones__num">17</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+      <div class="container footer__inner">
+        <div class="social">
+          <span class="social__title">SEGUINOS EN NUESTRAS REDES</span>
+          <div class="social__icons" aria-label="Redes sociales">
+            <a class="social__icon" href="#" aria-label="Instagram">IG</a>
+            <a class="social__icon" href="#" aria-label="Facebook">FB</a>
+            <a class="social__icon" href="#" aria-label="X">X</a>
+            <a class="social__icon" href="#" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+
+        <div class="footer__brand" aria-label="Nombre del club">
+          <span class="footer__name">CLUB DEPORTIVO TALAPECA</span>
+          <span class="footer__tag">FUNDADO EN 1968</span>
+        </div>
+
+        <nav class="footer__links" aria-label="Enlaces del pie">
+          <a href="#">PRIVACIDAD</a>
+          <span aria-hidden="true">|</span>
+          <a href="#">TÉRMINOS</a>
+          <span aria-hidden="true">|</span>
+          <a href="#contacto">CONTACTO</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
