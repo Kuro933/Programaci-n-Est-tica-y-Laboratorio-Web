@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Formulario</title>
+        <link rel="stylesheet" href="index.css">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Formulario</h1>
+        <div class="container">
+            <form action="#" method="get">
+               <div class="form-group"> 
+                <div class="form-group-column">
+                    <div class="form-group-item">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group-item">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+                    </div>
+                    <div class="form-group-item">
+                        <label for="nombre_usuario">Nombre de usuario:</label>
+                        <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre de usuario" minlength="4" maxlength="12">
+                    </div>
+                    <div class="form-group-item">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" value="Neuquén" placeholder="Ciudad">
+                    </div>
+                    <div class="form-group-item">
+                        <label for="pais">Pais:</label>
+                        <select name="pais" id="pais">
+                            <option value="argentina">Argentina</option>
+                            <option value="chile">Chile</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="uruguay">Uruguay</option>
+                            <option value="paraguay">Paraguay</option>
+                            <option value="japón">Japón</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group-item">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    </div>
+                    <div class="form-group-item">
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required minlength="6" maxlength="20">
+                    </div>
+                    <div class="form-group-item">
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad" placeholder="Edad" min="18" max="99">
+                    </div>
+                    <div class="form-group-item">
+                        <label for="acompanantes">Acompañantes:</label>
+                        <input type="number" id="acompanantes" name="acompanantes" min="0" max="5">
+                    </div>
+                    <div class="form-group-item">
+                        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    </div>
+                    <div class="form-group-item">
+                        <label for="hora_contacto">Hora preferida de contacto:</label>
+                        <input type="time" id="hora_contacto" name="hora_contacto">
+                    </div>
+
+                    <h2>Modalidad de cursado</h2>
+                    <div class="form-group-item">
+                        <label for="opcion">Opciones:</label>
+                        <input type="radio" id="presencial" name="opcion" value="Presencial">
+                        <label for="presencial">Presencial</label>
+                        <input type="radio" id="virtual" name="opcion" value="virtual">
+                        <label for="virtual">Virtual</label>
+                        <input type="radio" id="mixto" name="opcion" value="mixto">
+                        <label for="mixto">Mixto</label>
+                    </div>
+                    <section>
+                        <h2>Intereses</h2>
+                            <div class="form-group-item">
+                                <select name="intereses" id="intereses" multiple>
+                                    <option value="html">HTML</option>
+                                    <option value="css">CSS</option>
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="diseno_web">Diseño Web</option>
+                                    <option value="backend">Backend</option>
+                                </select>
+                            </div>
+                    </section>
+
+                    <div class="form-group-item">
+                        <label for="sugerencias">Sugerencias:</label>
+                        <textarea name="sugerencias" id="sugerencias" rows="5" cols="40" placeholder="Sugerencias"></textarea>
+                    </div>
+                    <button type="submit" value="Enviar">Enviar</button>
+                </form>
+            </div>
+        </body>
+    </html>
+</html>
