@@ -64,7 +64,13 @@ fieldset {
     background: rgba(232, 244, 252, 0.45);
 }
 
-.modalidad-fieldset .radio-group,
+.modalidad-fieldset .radio-group {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+}
+
+
 .intereses-fieldset .checkbox-group {
     display: flex;
     flex-direction: column;
