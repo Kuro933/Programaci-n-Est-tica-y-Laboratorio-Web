@@ -1,0 +1,92 @@
+table {
+    border-collapse: separate;
+    border-spacing: 4px;
+}
+
+th {
+    background-color: #09dae9;
+    color: white;
+    border-radius: 6px;
+    padding: 12px 80px;
+}
+
+td {
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 6px;
+    padding: 12px 14px;
+    text-align: center;
+}
+
+
+.sin-stock { 
+  background-color: #ffd6d6; 
+}
+
+.stock-bajo { 
+background-color: #fff3cd; 
+} 
+
+.stock-normal { 
+background-color: #d6f5d6; 
+}
+
+.perifericos {
+    font-style: italic;
+    font-weight: bold;
+        color: white;
+    background-color: seagreen;
+}
+
+.hardware {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: white;
+    background-color: blueviolet;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+    padding: 12px 10px;
+}
+
+.tabla-productos th:nth-child(1),
+.tabla-productos td:nth-child(1) {
+    width: 9%;
+    text-align: center;
+}
+
+.tabla-productos th:nth-child(2),
+.tabla-productos td:nth-child(2) {
+    width: 26%;
+}
+
+.tabla-productos th:nth-child(3),
+.tabla-productos td:nth-child(3) {
+    width: 22%;
+}
+
+.tabla-productos th:nth-child(4),
+.tabla-productos td:nth-child(4) {
+    width: 28%;
+    text-align: right;
+}
+
+.tabla-productos th:nth-child(5),
+.tabla-productos td:nth-child(5) {
+    width: 15%;
+    text-align: center;
+}
+
+.codigo {
+    text-align: center;
+}
+
+.precio {
+    width: 25%;
+    text-align: right;
+}
+
+.stock {
+    text-align: center;
+}
