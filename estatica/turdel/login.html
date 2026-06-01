@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar — Turdel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img class="brand__logo" src="imagenes/logo" alt="Logo Turdel">
+                    <div class="brand__text">
+                        <span class="brand__name">Reservas de pádel</span>
+                        <span class="brand__title">TURDEL</span>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="index.html">Inicio</a>
+                    <a class="nav__link" href="canchas.html">Canchas</a>
+                    <a class="nav__link" href="reservar.html">Reservar</a>
+                    <a class="nav__link" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav__link" href="partidos.html">Partidos</a>
+                    <a class="nav__link" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav__link is-active" href="login.html">Ingresar</a>
+                    <a class="nav__cta" href="registro.html">Registrarse</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="form-page">
+            <div class="form-card">
+                <h1>Ingresar</h1>
+                <p class="form-card__sub">Accedé a tu cuenta para gestionar reservas y partidos.</p>
+
+                <form action="#" method="post" novalidate>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" placeholder="correo@ejemplo.com" required>
+                        <p class="form-error">Ingresá un email válido.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-contraseña">Contraseña</label>
+                        <input type="password" id="login-contraseña" name="contraseña" placeholder="Tu contraseña" required minlength="6">
+                        <p class="form-error">La contraseña es obligatoria.</p>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--verde">Ingresar</button>
+                    </div>
+                </form>
+
+                <p class="form-link">
+                    ¿No tenés cuenta? <a href="registro.html">Registrate acá</a>
+                </p>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-bottom">
+                <p>&copy; 2026 Turdel</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

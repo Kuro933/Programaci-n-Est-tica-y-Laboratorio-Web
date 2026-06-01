@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar turno — Turdel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img class="brand__logo" src="imagenes/logo" alt="Logo Turdel">
+                    <div class="brand__text">
+                        <span class="brand__name">Reservas de pádel</span>
+                        <span class="brand__title">TURDEL</span>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="index.html">Inicio</a>
+                    <a class="nav__link" href="canchas.html">Canchas</a>
+                    <a class="nav__link is-active" href="reservar.html">Reservar</a>
+                    <a class="nav__link" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav__link" href="partidos.html">Partidos</a>
+                    <a class="nav__link" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav__link" href="login.html">Ingresar</a>
+                    <a class="nav__cta" href="registro.html">Registrarse</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="section">
+            <div class="container">
+                <h1 class="page-title">Reservar turno</h1>
+                <p class="page-subtitle">Elegí fecha, cancha y horario. Los turnos ocupados aparecen bloqueados.</p>
+
+                <div class="alert alert--exito" role="alert">
+                    Ejemplo de notificación: Turno reservado con éxito.
+                </div>
+
+                <div class="reserva-layout">
+                    <aside class="reserva-panel">
+                        <h2>Datos de la reserva</h2>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label for="fecha-reserva">Fecha</label>
+                                <input type="date" id="fecha-reserva" name="fecha" value="2026-06-01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cancha-reserva">Cancha</label>
+                                <select id="cancha-reserva" name="cancha" required>
+                                    <option value="cancha1">Cancha 1 — Club Norte (Techada)</option>
+                                    <option value="cancha2">Cancha 2 — Padel Center (Abierta)</option>
+                                    <option value="cancha3">Cancha 3 — Sport Club (Techada)</option>
+                                    <option value="cancha4">Cancha 4 — Río Padel (Abierta)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="horario-seleccionado">Horario seleccionado</label>
+                                <input type="text" id="horario-seleccionado" name="horario" value="10:00" readonly placeholder="Seleccioná un horario">
+                            </div>
+                            <div class="form-group">
+                                <label for="jugadores">Cantidad de jugadores</label>
+                                <select id="jugadores" name="jugadores">
+                                    <option value="2">2 jugadores</option>
+                                    <option value="3">3 jugadores</option>
+                                    <option value="4" selected>4 jugadores</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="notas">Notas <span class="opcional">(opcional)</span></label>
+                                <textarea id="notas" name="notas" rows="3" placeholder="Ej: Necesito paletas de préstamo"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="reset" class="btn btn--outline">Limpiar</button>
+                                <button type="submit" class="btn btn--verde">Confirmar reserva</button>
+                            </div>
+                        </form>
+                    </aside>
+
+                    <section class="reserva-panel horarios-section" aria-label="Horarios disponibles">
+                        <h2>Horarios — Cancha 1 — Club Norte</h2>
+                        <p style="margin: 0 0 1rem; color: var(--texto-suave); font-size: 0.9rem;">
+                            Domingo 1 de junio de 2026
+                        </p>
+
+                        <div class="horarios-leyenda">
+                            <span class="leyenda-item leyenda-item--disponible"><span></span> Disponible</span>
+                            <span class="leyenda-item leyenda-item--ocupado"><span></span> Ocupado</span>
+                            <span class="leyenda-item leyenda-item--seleccionado"><span></span> Seleccionado</span>
+                        </div>
+
+                        <h3>Mañana</h3>
+                        <div class="horarios-grid" role="group" aria-label="Horarios de la mañana">
+                            <button type="button" class="horario horario--disponible">08:00</button>
+                            <button type="button" class="horario horario--ocupado" disabled>09:00</button>
+                            <button type="button" class="horario horario--seleccionado">10:00</button>
+                            <button type="button" class="horario horario--disponible">11:00</button>
+                            <button type="button" class="horario horario--ocupado" disabled>12:00</button>
+                        </div>
+
+                        <h3 style="margin-top: 1.25rem;">Tarde</h3>
+                        <div class="horarios-grid" role="group" aria-label="Horarios de la tarde">
+                            <button type="button" class="horario horario--ocupado" disabled>14:00</button>
+                            <button type="button" class="horario horario--disponible">15:00</button>
+                            <button type="button" class="horario horario--disponible">16:00</button>
+                            <button type="button" class="horario horario--ocupado" disabled>17:00</button>
+                            <button type="button" class="horario horario--disponible">18:00</button>
+                        </div>
+
+                        <h3 style="margin-top: 1.25rem;">Noche</h3>
+                        <div class="horarios-grid" role="group" aria-label="Horarios de la noche">
+                            <button type="button" class="horario horario--disponible">19:00</button>
+                            <button type="button" class="horario horario--disponible">20:00</button>
+                            <button type="button" class="horario horario--ocupado" disabled>21:00</button>
+                            <button type="button" class="horario horario--disponible">22:00</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <section>
+                    <h3>Turdel</h3>
+                    <p>Plataforma de reserva de turnos en canchas de pádel.</p>
+                </section>
+                <section>
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="mis-reservas.html">Mis reservas</a></li>
+                        <li><a href="canchas.html">Canchas</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Contacto</h3>
+                    <p><a href="mailto:info@turdel.com">info@turdel.com</a></p>
+                </section>
+            </div>
+            <div class="container footer-bottom">
+                <p>&copy; 2026 Turdel</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
