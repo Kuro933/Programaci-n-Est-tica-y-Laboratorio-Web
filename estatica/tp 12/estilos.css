@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 1.5rem 1rem 2.5rem;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #1a1a2e;
+    background: linear-gradient(145deg, #e8f4fc 0%, #f5f0fa 50%, #fdf6ec 100%);
+    line-height: 1.5;
+}
+
+h1 {
+    max-width: 720px;
+    margin: 0 auto 1.75rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #16213e;
+}
+
+section {
+    max-width: 720px;
+    margin: 0 auto 1.25rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+    border: 1px solid rgba(22, 33, 62, 0.1);
+    border-radius: 14px;
+    box-shadow:
+        0 4px 6px rgba(22, 33, 62, 0.04),
+        0 12px 32px rgba(22, 33, 62, 0.08);
+}
+
+h2 {
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f3460;
+    border-bottom: 2px solid #e8f4fc;
+}
+
+button {
+    margin-top: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(15, 52, 96, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #1a1a2e;
+    background: #fff;
+    border: 1px solid rgba(22, 33, 62, 0.18);
+    border-radius: 8px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #0f3460;
+    box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.12);
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #16213e;
+    cursor: pointer;
+}
+
+label input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    accent-color: #0f3460;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#mensaje,
+#tecla,
+#mensajeForm,
+#resumen,
+#resultadoAlumno {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    background: rgba(232, 244, 252, 0.7);
+    border: 1px solid rgba(15, 52, 96, 0.12);
+    min-height: 1.5rem;
+}
+
+#mensaje:empty,
+#tecla:empty,
+#mensajeForm:empty,
+#resumen:empty,
+#resultadoAlumno:empty {
+    display: none;
+}
+
+#foto {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    border-radius: 10px;
+    border: 2px solid rgba(22, 33, 62, 0.1);
+    box-shadow: 0 8px 20px rgba(22, 33, 62, 0.1);
+}
+
+#caja {
+    margin-top: 0.5rem;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    color: #16213e;
+    background: #f0f4f8;
+    border: 2px dashed rgba(15, 52, 96, 0.25);
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, width 0.3s ease;
+}

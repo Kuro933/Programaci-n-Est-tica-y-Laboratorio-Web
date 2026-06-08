@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>TP 12 - JavaScript</title>
+ <link rel="stylesheet" href="estilos.css">
+ <script src="script.js" defer></script>
+</head>
+<body>
+ <h1>Trabajo Práctico 12 - JavaScript II y III</h1>
+
+ <!-- Ejercicio 6: atributos de evento (legacy) -->
+ <section>
+  <h2>Ejercicio 6</h2>
+  <button onclick="saludarLegacy()">Saludar legacy</button>
+  <input type="text" oninput="escribirLegacy()" placeholder="Escriba algo">
+  <!-- Forma moderna: usar addEventListener en script.js en lugar de onclick/oninput -->
+ </section>
+
+ <!-- Ejercicio 7 -->
+ <section>
+  <h2>Ejercicio 7</h2>
+  <button id="btnSaludar">Saludar</button>
+  <p id="mensaje"></p>
+ </section>
+
+ <!-- Ejercicio 8 -->
+ <section>
+  <h2>Ejercicio 8</h2>
+  <input id="teclado" type="text" placeholder="Presione una tecla">
+  <p id="tecla"></p>
+ </section>
+
+ <!-- Ejercicio 9 -->
+ <section>
+  <h2>Ejercicio 9</h2>
+  <form id="formulario">
+   <input id="nombreForm" type="text" placeholder="Nombre">
+   <button type="submit">Enviar</button>
+  </form>
+  <p id="mensajeForm"></p>
+ </section>
+
+ <!-- Ejercicio 11 -->
+ <section>
+  <h2>Ejercicio 11</h2>
+  <input id="nombre" type="text" placeholder="Nombre">
+  <textarea id="observaciones" placeholder="Observaciones"></textarea>
+  <label><input id="acepta" type="checkbox"> Acepta condiciones</label>
+  <select id="materia">
+   <option value="HTML">HTML</option>
+   <option value="CSS">CSS</option>
+   <option value="JavaScript">JavaScript</option>
+  </select>
+  <button id="btnResumen" type="button">Mostrar resumen</button>
+  <div id="resumen"></div>
+ </section>
+
+ <!-- Ejercicio 12 -->
+ <section>
+  <h2>Ejercicio 12</h2>
+  <img id="foto" src="imagen1.jpg" alt="Imagen de ejemplo">
+  <button id="btnCambiarImagen" type="button">Cambiar imagen</button>
+ </section>
+
+ <!-- Ejercicio 13 -->
+ <section>
+  <h2>Ejercicio 13</h2>
+  <div id="caja">Caja de prueba</div>
+  <button id="btnEstilo" type="button">Cambiar estilo</button>
+ </section>
+
+ <!-- Ejercicio 14 -->
+ <section>
+  <h2>Ejercicio 14</h2>
+  <form id="formAlumno">
+   <input id="nombreAlumno" type="text" placeholder="Nombre">
+   <input id="apellidoAlumno" type="text" placeholder="Apellido">
+   <input id="edadAlumno" type="number" placeholder="Edad">
+   <select id="materiaAlumno">
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="JavaScript">JavaScript</option>
+   </select>
+   <label><input id="aceptaReglamento" type="checkbox"> Acepta reglamento</label>
+   <textarea id="observacionesAlumno" placeholder="Observaciones"></textarea>
+   <button type="submit">Registrar alumno</button>
+  </form>
+  <div id="resultadoAlumno"></div>
+ </section>
+</body>
+</html>
