@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TP Obligatorio JS PEyLW 2025</title>
+  <link rel="stylesheet" type="text/css" href="estilos.css">
+  <style>
+  </style>
+
+
+<script type="text/javascript" src="funciones.js"></script>
+
+</head>
+<body>
+  
+<h1>Trabajo Obligatorio JS PEyLW 2025</h1>
+
+  <form id="miFormulario">
+
+
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" >
+
+
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" >
+
+    <label for="apellido">Email:</label>
+    <input type="text" id="email" name="email" >
+
+
+
+    <label for="obras_sociales">Obra Social:</label>
+    <select id="obras_sociales" name="obras_sociales">
+      <option value=""></option>
+      <option value="obra1">SOSUNC</option>
+      <option value="obra2">ISSN</option>
+      <option value="obra3">OSDE</option>
+      <!-- Agrega más opciones aquí -->
+    </select>
+
+
+    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+    <div class="date-inputs">
+      <input type="text" id="dia" name="dia" placeholder="D&iacute;a" >  
+      <input type="text" id="mes" name="mes" placeholder="Mes" > 
+      <input type="text" id="anio" name="anio" placeholder="A&ntilde;o" >
+    </div>
+
+
+
+    <label for="observaciones">Observaciones:</label>
+    <textarea id="observaciones" name="observaciones"></textarea>
+
+    <div id="divUsoOpcional"></div>
+
+    <input type="submit" value="Enviar" onclick="return validar();">
+  </form>
+
+<br/>
+
+<div id="enunciado">
+  <h1>Enunciado</h1>
+  Al presionar el boton "Enviar" deben realizarse las siguientes validaciones:
+  
+  <ul>
+    <li>Los campos para el dia, mes y año deben solamente aceptar valores numéricos enteros positivos.</li>
+    <li>La fecha ser una fecha válida, teniendo en cuenta días del mes, cantidad de meses, año bisiesto, etc. Ejemplo: 31/06/2023 es inválida. </li>
+    <li>Todos son datos obligatorios menos las observaciones.</li>
+    <li>Validar la estructura de un mail - considerar el dominio, los caracteres a ingresar, los símbolos que debe tener.</li>
+  </ul>
+
+  <p><strong>IMPORTANTE: NO DEBE MODIFICAR EL HTML.</strong> El trabajo debe ser realizado en el archivo vinculado "funciones.js"</p>
+  <p><strong>Las notificaciones deben ser visuales</strong> Por ejemplo: pintando el borde de rojo - Cambiando el background del control - etc. 
+  No es aceptable notificar al usuario con el uso de alerts para los errores. SI Puede usar alert para indicar que todos los datos son correctos .</p>
+  <p>Todo el formulario debe ser verificado al mismo tiempo. Es decir que si existen varios campos incorrectos, deben 
+    señalizarse todos ellos</p>
+  <p>No está permitido el uso de librerías javascript.</p>
+  <p>Hay un div cuyo id es divUsoOpcional que puede ser o no utilizado.</p>
+
+  </div>
+
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Captura el formulario por su ID
+    var form = document.getElementById('miFormulario');
+
+    // Agrega un controlador de eventos para el evento 'submit'
+    form.addEventListener('submit', function(event) {
+      // Evita que el formulario se envíe
+      event.preventDefault();
+    });
+  });
+</script>
+
+</html>
