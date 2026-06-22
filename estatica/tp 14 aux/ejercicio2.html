@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Copa América</title>
+    <link rel="stylesheet" href="ejercicio.css">
+    <script type="text/javascript" src="default.js"></script>
+</head>
+<body>
+    <h1>Ejercicio 2 - Oponentes Copa América</h1>
+
+    <form id="formCopa">
+        <label for="pais">Seleccione un país:</label>
+        <select id="pais" name="pais">
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Venezuela">Venezuela</option>
+        </select>
+
+        <input type="button" value="Enviar" onclick="buscarOponentes();">
+
+        <div id="mensaje"></div>
+    </form>
+</body>
+</html>

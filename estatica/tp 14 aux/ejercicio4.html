@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 - Pintar filas</title>
+    <link rel="stylesheet" href="ejercicio.css">
+    <script type="text/javascript" src="default.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eeeeee;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 4 - Pintar filas de tabla</h1>
+
+    <table id="tablaDatos">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo Electrónico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Juan</td><td>Pérez</td><td>juan.perez@mail.com</td></tr>
+            <tr><td>María</td><td>Gómez</td><td>maria.gomez@mail.com</td></tr>
+            <tr><td>Carlos</td><td>López</td><td>carlos.lopez@mail.com</td></tr>
+            <tr><td>Ana</td><td>Fernández</td><td>ana.fernandez@mail.com</td></tr>
+            <tr><td>Luis</td><td>Martínez</td><td>luis.martinez@mail.com</td></tr>
+            <tr><td>Sofía</td><td>Rodríguez</td><td>sofia.rodriguez@mail.com</td></tr>
+            <tr><td>Diego</td><td>Sánchez</td><td>diego.sanchez@mail.com</td></tr>
+            <tr><td>Lucía</td><td>Torres</td><td>lucia.torres@mail.com</td></tr>
+            <tr><td>Pablo</td><td>Ramírez</td><td>pablo.ramirez@mail.com</td></tr>
+            <tr><td>Elena</td><td>Castro</td><td>elena.castro@mail.com</td></tr>
+            <tr><td>Martín</td><td>Silva</td><td>martin.silva@mail.com</td></tr>
+            <tr><td>Valeria</td><td>Romero</td><td>valeria.romero@mail.com</td></tr>
+            <tr><td>Facundo</td><td>Acosta</td><td>facundo.acosta@mail.com</td></tr>
+            <tr><td>Camila</td><td>Medina</td><td>camila.medina@mail.com</td></tr>
+            <tr><td>Tomás</td><td>Benítez</td><td>tomas.benitez@mail.com</td></tr>
+            <tr><td>Florencia</td><td>Navarro</td><td>florencia.navarro@mail.com</td></tr>
+            <tr><td>Agustín</td><td>Molina</td><td>agustin.molina@mail.com</td></tr>
+            <tr><td>Julieta</td><td>Herrera</td><td>julieta.herrera@mail.com</td></tr>
+            <tr><td>Matías</td><td>Campos</td><td>matias.campos@mail.com</td></tr>
+            <tr><td>Paula</td><td>Vega</td><td>paula.vega@mail.com</td></tr>
+            <tr><td>Nicolás</td><td>Aguirre</td><td>nicolas.aguirre@mail.com</td></tr>
+            <tr><td>Carolina</td><td>Peña</td><td>carolina.pena@mail.com</td></tr>
+            <tr><td>Germán</td><td>Ortega</td><td>german.ortega@mail.com</td></tr>
+            <tr><td>Daniela</td><td>Ruiz</td><td>daniela.ruiz@mail.com</td></tr>
+            <tr><td>Ignacio</td><td>Moreno</td><td>ignacio.moreno@mail.com</td></tr>
+        </tbody>
+    </table>
+
+    <form id="formPintar">
+        <label for="Numero">Número:</label>
+        <input type="text" id="Numero" name="Numero">
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" value="yellow">
+
+        <input type="button" value="Pintar" onclick="pintarFilas();">
+    </form>
+</body>
+</html>

@@ -18,7 +18,7 @@ function esEnteroPositivo(valor) {
     if (!/^\d+$/.test(texto)) {
         return false;
     }
-
+    
     return parseInt(texto) > 0;
 }
 
@@ -128,6 +128,10 @@ function validar() {
         marcarError(anio);
         hayErrores = true;
         mensajes.push("El año es obligatorio.");
+    } else if (anio.value.length != 4) {
+        marcarError(anio);
+        hayErrores = true;
+        mensajes.push("El año debe tener 4 dígitos.");
     } else if (!anioValido) {
         marcarError(anio);
         hayErrores = true;
