@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - Validación de formulario</title>
+    <link rel="stylesheet" href="ejercicio.css">
+    <script src="default.js" defer></script>
+</head>
+<body>
+    <h1>Ejercicio 1 - Validación de formulario</h1>
+
+    <form id="datosPersonales">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido">
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion">
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea name="comentarios" id="comentarios"></textarea>
+
+        <div id="errores"></div>
+
+        <button type="submit" id="btnEnviar">Enviar</button>
+    </form>
+</body>
+</html>

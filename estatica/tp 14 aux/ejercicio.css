@@ -25,6 +25,7 @@ label {
 }
 
 input[type="text"],
+input[type="email"],
 select,
 textarea {
   width: 95%;
@@ -42,16 +43,9 @@ textarea {
   height: 100px;
 }
 
-.date-inputs {
-  display: flex;
-  gap: 10px;
-}
-
-.date-inputs input[type="text"] {
-  width: 60px;
-}
-
-input[type="submit"] {
+input[type="submit"],
+input[type="button"],
+button {
   background-color: #4caf50;
   color: #ffffff;
   padding: 10px 20px;
@@ -60,12 +54,56 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
   background-color: #45a049;
 }
 
-#errores {
+#errores,
+#mensaje {
   margin-top: 15px;
   padding: 10px;
   min-height: 20px;
+}
+
+#contenedor {
+  position: relative;
+  min-height: 200px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#cajaRoja {
+  position: relative;
+  width: 250px;
+  height: 80px;
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin: 0 auto 20px auto;
+  background-color: #ffffff;
+}
+
+th,
+td {
+  border: 1px solid #cccccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #eeeeee;
+}
+
+#formPintar {
+  max-width: 900px;
 }

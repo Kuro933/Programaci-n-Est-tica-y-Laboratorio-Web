@@ -4,24 +4,7 @@
     <meta charset="UTF-8">
     <title>Ejercicio 4 - Pintar filas</title>
     <link rel="stylesheet" href="ejercicio.css">
-    <script type="text/javascript" src="default.js"></script>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            border: 1px solid #cccccc;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #eeeeee;
-        }
-    </style>
+    <script src="default.js" defer></script>
 </head>
 <body>
     <h1>Ejercicio 4 - Pintar filas de tabla</h1>
@@ -70,7 +53,7 @@
         <label for="color">Color:</label>
         <input type="text" id="color" name="color" value="yellow">
 
-        <input type="button" value="Pintar" onclick="pintarFilas();">
+        <button type="button" id="btnPintar">Pintar</button>
     </form>
 </body>
 </html>

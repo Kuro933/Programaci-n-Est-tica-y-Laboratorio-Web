@@ -4,23 +4,7 @@
     <meta charset="UTF-8">
     <title>Ejercicio 3 - Mover div</title>
     <link rel="stylesheet" href="ejercicio.css">
-    <script type="text/javascript" src="default.js"></script>
-    <style>
-        #contenedor {
-            position: relative;
-            min-height: 200px;
-            margin-bottom: 20px;
-        }
-
-        #cajaRoja {
-            position: relative;
-            width: 250px;
-            height: 80px;
-            background-color: red;
-            color: white;
-            padding: 10px;
-        }
-    </style>
+    <script src="default.js" defer></script>
 </head>
 <body>
     <h1>Ejercicio 3 - Mover caja roja</h1>
@@ -36,7 +20,7 @@
         <label for="Left">Left:</label>
         <input type="text" id="Left" name="Left">
 
-        <input type="button" value="Mover" onclick="moverCaja();">
+        <button type="button" id="btnMover">Mover</button>
     </form>
 </body>
 </html>
