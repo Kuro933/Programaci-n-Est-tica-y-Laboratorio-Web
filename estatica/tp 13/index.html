@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>TP 13 - JavaScript</title>
+ <link rel="stylesheet" href="estilos.css">
+ <script src="script.js" defer></script>
+</head>
+<body>
+ <header>
+  <h1>Trabajo Práctico 13 - JavaScript</h1>
+  <button id="btnTema" type="button">Modo nocturno</button>
+ </header>
+
+ <!-- Ejercicio 1: Validación de CUIT -->
+ <section>
+  <h2>Ejercicio 1 - Validación de CUIT</h2>
+  <input type="text" id="inputCuit" placeholder="Ingrese CUIT sin guiones (11 dígitos)">
+  <button id="btnValidarCuit" type="button">Validar CUIT</button>
+  <p id="resultadoCuit" class="resultado"></p>
+ </section>
+
+ <!-- Ejercicio 3: Palíndromo -->
+ <section>
+  <h2>Ejercicio 3 - Palíndromo</h2>
+  <textarea id="inputPalindromo" placeholder="Ingrese una frase para verificar"></textarea>
+  <button id="btnPalindromo" type="button">Verificar palíndromo</button>
+  <p id="resultadoPalindromo" class="resultado"></p>
+ </section>
+
+ <!-- Ejercicio 4: Número primo -->
+ <section>
+  <h2>Ejercicio 4 - ¿Es primo?</h2>
+  <input type="number" id="inputPrimo" placeholder="Ingrese un número entero" min="0">
+  <button id="btnPrimo" type="button">Verificar</button>
+  <p id="resultadoPrimo" class="resultado"></p>
+ </section>
+
+ <!-- Ejercicio 6: Posición del mouse (se muestra en tiempo real en la esquina) -->
+ <section>
+  <h2>Ejercicio 6 - Posición del puntero</h2>
+  <p>Mueva el ratón en cualquier punto de la ventana. La posición se actualiza en tiempo real.</p>
+ </section>
+ <div id="posicionMouse">Navegador: - | Página: -</div>
+
+ <!-- Ejercicio 7: Recorrido del árbol -->
+ <section>
+  <h2>Ejercicio 7 - Recorrido del árbol</h2>
+  <ul id="algo">
+   <li>Elemento 1
+    <ul>
+     <li>Subelemento 1.1</li>
+     <li>Subelemento 1.2</li>
+    </ul>
+   </li>
+   <li>Elemento 2</li>
+   <li>Elemento 3
+    <ul>
+     <li>Subelemento 3.1</li>
+    </ul>
+   </li>
+  </ul>
+  <button id="btnListar" type="button">Listar</button>
+ </section>
+
+ <!-- Ejercicio 8: Agenda -->
+ <section>
+  <h2>Ejercicio 8 - Agenda</h2>
+  <table id="tablaAgenda">
+   <thead>
+    <tr>
+     <th>Nombre</th>
+     <th>Dirección</th>
+     <th>Ciudad</th>
+     <th>Teléfono</th>
+     <th>Acciones</th>
+    </tr>
+   </thead>
+   <tbody id="cuerpoAgenda"></tbody>
+  </table>
+  <div class="form-agenda">
+   <input type="text" id="agendaNombre" placeholder="Nombre">
+   <input type="text" id="agendaDireccion" placeholder="Dirección">
+   <input type="text" id="agendaCiudad" placeholder="Ciudad">
+   <input type="text" id="agendaTelefono" placeholder="Teléfono">
+   <button id="btnNuevoRegistro" type="button">Nuevo Registro</button>
+  </div>
+ </section>
+
+ <!-- Ejercicio 9: Registro de notas -->
+ <section>
+  <h2>Ejercicio 9 - Registro de notas</h2>
+  <input type="text" id="nombre" placeholder="Nombre">
+  <input type="text" id="apellido" placeholder="Apellido">
+  <input type="number" id="nota" placeholder="Nota (1-10)" min="1" max="10">
+  <button id="btnAgregar" type="button">Agregar</button>
+  <table id="tablaNotas">
+   <thead>
+    <tr>
+     <th>#</th>
+     <th>Nombre</th>
+     <th>Apellido</th>
+     <th>Nota</th>
+     <th>Condición</th>
+     <th>Acciones</th>
+    </tr>
+   </thead>
+   <tbody></tbody>
+  </table>
+  <p id="promedio">Promedio: -</p>
+ </section>
+</body>
+</html>
