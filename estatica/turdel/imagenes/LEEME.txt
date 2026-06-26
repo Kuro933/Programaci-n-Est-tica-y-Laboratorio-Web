@@ -1,0 +1,11 @@
+Imágenes pendientes para el proyecto Turdel (agregar en esta carpeta):
+
+- logo          → Logo de Turdel
+- hero-cancha   → Fondo del hero (cancha de pádel)
+- hero-jugadores → Jugadores en acción
+- cancha1       → Cancha 1 — Club Norte
+- cancha2       → Cancha 2 — Padel Center
+- cancha3       → Cancha 3 — Sport Club
+- cancha4       → Cancha 4 — Río Padel
+
+Formato sugerido: .jpg o .webp

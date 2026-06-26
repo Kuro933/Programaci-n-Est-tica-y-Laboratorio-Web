@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis reservas — Turdel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img class="brand__logo" src="imagenes/logo" alt="Logo Turdel">
+                    <div class="brand__text">
+                        <span class="brand__name">Reservas de pádel</span>
+                        <span class="brand__title">TURDEL</span>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="index.html">Inicio</a>
+                    <a class="nav__link" href="canchas.html">Canchas</a>
+                    <a class="nav__link" href="reservar.html">Reservar</a>
+                    <a class="nav__link is-active" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav__link" href="partidos.html">Partidos</a>
+                    <a class="nav__link" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav__link" href="login.html">Ingresar</a>
+                    <a class="nav__cta" href="registro.html">Registrarse</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="section">
+            <div class="container">
+                <h1 class="page-title">Mis reservas</h1>
+                <p class="page-subtitle">Administrá tus turnos: creá nuevas reservas, modificá horarios o cancelá cuando lo necesites.</p>
+
+                <p style="margin-bottom: 1.25rem;">
+                    <a class="btn btn--verde" href="reservar.html">+ Nueva reserva</a>
+                </p>
+
+                <div class="tabla-wrapper">
+                    <table class="tabla">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Horario</th>
+                                <th>Cancha</th>
+                                <th>Ubicación</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01/06/2026</td>
+                                <td>10:00 — 11:30</td>
+                                <td>Cancha 1 — Club Norte</td>
+                                <td>Neuquén Capital</td>
+                                <td><span class="estado estado--confirmada">Confirmada</span></td>
+                                <td>
+                                    <div class="tabla__acciones">
+                                        <a class="btn btn--outline btn--chico" href="reservar.html">Modificar</a>
+                                        <button type="button" class="btn btn--peligro btn--chico">Cancelar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>05/06/2026</td>
+                                <td>18:00 — 19:30</td>
+                                <td>Cancha 2 — Padel Center</td>
+                                <td>Cipolletti</td>
+                                <td><span class="estado estado--pendiente">Pendiente</span></td>
+                                <td>
+                                    <div class="tabla__acciones">
+                                        <a class="btn btn--outline btn--chico" href="reservar.html">Modificar</a>
+                                        <button type="button" class="btn btn--peligro btn--chico">Cancelar</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>28/05/2026</td>
+                                <td>20:00 — 21:30</td>
+                                <td>Cancha 3 — Sport Club</td>
+                                <td>Plottier</td>
+                                <td><span class="estado estado--cancelada">Cancelada</span></td>
+                                <td>
+                                    <div class="tabla__acciones">
+                                        <a class="btn btn--verde btn--chico" href="reservar.html">Volver a reservar</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <section style="margin-top: 2rem;">
+                    <h2 style="font-size: 1.2rem; color: var(--verde-oscuro); margin-bottom: 1rem;">Modificar reserva (ejemplo)</h2>
+                    <div class="reserva-panel" style="max-width: 480px;">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label for="mod-fecha">Nueva fecha</label>
+                                <input type="date" id="mod-fecha" name="fecha" value="2026-06-05">
+                            </div>
+                            <div class="form-group">
+                                <label for="mod-cancha">Nueva cancha</label>
+                                <select id="mod-cancha" name="cancha">
+                                    <option value="cancha1">Cancha 1 — Club Norte</option>
+                                    <option value="cancha2" selected>Cancha 2 — Padel Center</option>
+                                    <option value="cancha3">Cancha 3 — Sport Club</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mod-horario">Nuevo horario</label>
+                                <select id="mod-horario" name="horario">
+                                    <option value="16:00">16:00</option>
+                                    <option value="18:00" selected>18:00</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn--outline">Descartar</button>
+                                <button type="submit" class="btn btn--verde">Guardar cambios</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <section>
+                    <h3>Turdel</h3>
+                    <p>Plataforma de reserva de turnos en canchas de pádel.</p>
+                </section>
+                <section>
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="reservar.html">Reservar</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Contacto</h3>
+                    <p><a href="mailto:info@turdel.com">info@turdel.com</a></p>
+                </section>
+            </div>
+            <div class="container footer-bottom">
+                <p>&copy; 2026 Turdel</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

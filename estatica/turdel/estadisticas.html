@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas — Turdel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img class="brand__logo" src="imagenes/logo" alt="Logo Turdel">
+                    <div class="brand__text">
+                        <span class="brand__name">Reservas de pádel</span>
+                        <span class="brand__title">TURDEL</span>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="index.html">Inicio</a>
+                    <a class="nav__link" href="canchas.html">Canchas</a>
+                    <a class="nav__link" href="reservar.html">Reservar</a>
+                    <a class="nav__link" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav__link" href="partidos.html">Partidos</a>
+                    <a class="nav__link is-active" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav__link" href="login.html">Ingresar</a>
+                    <a class="nav__cta" href="registro.html">Registrarse</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="section">
+            <div class="container">
+                <h1 class="page-title">Mis estadísticas</h1>
+                <p class="page-subtitle">Cargá los resultados de tus partidos y consultá tu historial.</p>
+
+                <div class="stats-resumen">
+                    <div class="stat-box">
+                        <span class="stat-box__num">12</span>
+                        <span class="stat-box__label">Partidos jugados</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-box__num">8</span>
+                        <span class="stat-box__label">Victorias</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-box__num">4</span>
+                        <span class="stat-box__label">Derrotas</span>
+                    </div>
+                </div>
+
+                <div class="stats-layout">
+                    <section class="reserva-panel">
+                        <h2>Cargar resultado</h2>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label for="stats-fecha">Fecha del partido</label>
+                                <input type="date" id="stats-fecha" name="fecha" value="2026-05-28" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stats-cancha">Cancha</label>
+                                <select id="stats-cancha" name="cancha" required>
+                                    <option value="cancha1">Cancha 1 — Club Norte</option>
+                                    <option value="cancha2">Cancha 2 — Padel Center</option>
+                                    <option value="cancha3">Cancha 3 — Sport Club</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="stats-rival">Rival / Equipo contrario</label>
+                                <input type="text" id="stats-rival" name="rival" placeholder="Ej: Equipo de Lucas y Ana" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stats-resultado">Resultado</label>
+                                <select id="stats-resultado" name="resultado" required>
+                                    <option value="">Seleccioná</option>
+                                    <option value="victoria">Victoria</option>
+                                    <option value="derrota">Derrota</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="stats-set1">Set 1 (ej: 6-4)</label>
+                                <input type="text" id="stats-set1" name="set1" placeholder="6-4">
+                            </div>
+                            <div class="form-group">
+                                <label for="stats-set2">Set 2</label>
+                                <input type="text" id="stats-set2" name="set2" placeholder="4-6">
+                            </div>
+                            <div class="form-group">
+                                <label for="stats-set3">Set 3 <span class="opcional">(opcional)</span></label>
+                                <input type="text" id="stats-set3" name="set3" placeholder="7-5">
+                            </div>
+                            <div class="form-group">
+                                <label for="stats-notas">Notas <span class="opcional">(opcional)</span></label>
+                                <textarea id="stats-notas" name="notas" rows="2" placeholder="Comentarios del partido"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--verde">Guardar resultado</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section>
+                        <h2 style="font-size: 1.1rem; color: var(--verde-oscuro); margin: 0 0 1rem;">Historial de partidos</h2>
+                        <div class="tabla-wrapper">
+                            <table class="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Cancha</th>
+                                        <th>Rival</th>
+                                        <th>Resultado</th>
+                                        <th>Sets</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>28/05/2026</td>
+                                        <td>Cancha 1</td>
+                                        <td>Lucas y Ana</td>
+                                        <td><span class="estado estado--confirmada">Victoria</span></td>
+                                        <td>6-4, 6-3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>21/05/2026</td>
+                                        <td>Cancha 2</td>
+                                        <td>Diego y Martín</td>
+                                        <td><span class="estado estado--cancelada">Derrota</span></td>
+                                        <td>4-6, 6-4, 3-6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14/05/2026</td>
+                                        <td>Cancha 3</td>
+                                        <td>Carlos y Sofía</td>
+                                        <td><span class="estado estado--confirmada">Victoria</span></td>
+                                        <td>7-5, 6-2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>07/05/2026</td>
+                                        <td>Cancha 1</td>
+                                        <td>Pablo y Elena</td>
+                                        <td><span class="estado estado--confirmada">Victoria</span></td>
+                                        <td>6-1, 6-4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <section>
+                    <h3>Turdel</h3>
+                    <p>Plataforma de reserva de turnos en canchas de pádel.</p>
+                </section>
+                <section>
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="partidos.html">Partidos</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Contacto</h3>
+                    <p><a href="mailto:info@turdel.com">info@turdel.com</a></p>
+                </section>
+            </div>
+            <div class="container footer-bottom">
+                <p>&copy; 2026 Turdel</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

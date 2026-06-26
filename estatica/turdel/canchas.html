@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canchas — Turdel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img class="brand__logo" src="imagenes/logo" alt="Logo Turdel">
+                    <div class="brand__text">
+                        <span class="brand__name">Reservas de pádel</span>
+                        <span class="brand__title">TURDEL</span>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="index.html">Inicio</a>
+                    <a class="nav__link is-active" href="canchas.html">Canchas</a>
+                    <a class="nav__link" href="reservar.html">Reservar</a>
+                    <a class="nav__link" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav__link" href="partidos.html">Partidos</a>
+                    <a class="nav__link" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav__link" href="login.html">Ingresar</a>
+                    <a class="nav__cta" href="registro.html">Registrarse</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="section">
+            <div class="container">
+                <h1 class="page-title">Canchas disponibles</h1>
+                <p class="page-subtitle">Filtrá por tipo, ubicación o disponibilidad para encontrar la cancha ideal.</p>
+
+                <aside class="filtros" aria-label="Filtros de búsqueda">
+                    <h2>Filtros</h2>
+                    <form action="#" method="get">
+                        <div class="filtros-grid">
+                            <label for="filtro-ubicacion">
+                                Ubicación
+                                <select id="filtro-ubicacion" name="ubicacion">
+                                    <option value="">Todas</option>
+                                    <option value="neuquen">Neuquén Capital</option>
+                                    <option value="cipolletti">Cipolletti</option>
+                                    <option value="plottier">Plottier</option>
+                                    <option value="centenario">Centenario</option>
+                                </select>
+                            </label>
+                            <label for="filtro-tipo">
+                                Tipo de cancha
+                                <select id="filtro-tipo" name="tipo">
+                                    <option value="">Todas</option>
+                                    <option value="techada">Techada</option>
+                                    <option value="abierta">Abierta</option>
+                                </select>
+                            </label>
+                            <label for="filtro-disponibilidad">
+                                Disponibilidad
+                                <select id="filtro-disponibilidad" name="disponibilidad">
+                                    <option value="">Cualquiera</option>
+                                    <option value="disponible">Con turnos libres</option>
+                                    <option value="ocupada">Completa hoy</option>
+                                </select>
+                            </label>
+                            <label for="filtro-fecha">
+                                Fecha
+                                <input type="date" id="filtro-fecha" name="fecha" value="2026-06-01">
+                            </label>
+                            <div>
+                                <button type="submit" class="btn btn--verde">Aplicar filtros</button>
+                            </div>
+                        </div>
+                    </form>
+                </aside>
+
+                <div class="canchas-grid">
+                    <article class="cancha-card">
+                        <img class="cancha-card__img" src="imagenes/cancha1" alt="Cancha 1 — Club Norte">
+                        <div class="cancha-card__body">
+                            <div class="cancha-card__tags">
+                                <span class="tag tag--techada">Techada</span>
+                                <span class="tag tag--disponible">Disponible</span>
+                            </div>
+                            <h3>Cancha 1 — Club Norte</h3>
+                            <p>Neuquén Capital · Césped sintético · Iluminación LED</p>
+                            <p><strong>Próximo turno libre:</strong> 14:00 hs</p>
+                            <div class="cancha-card__footer">
+                                <a class="btn btn--verde btn--chico" href="reservar.html">Reservar</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cancha-card">
+                        <img class="cancha-card__img" src="imagenes/cancha2" alt="Cancha 2 — Padel Center">
+                        <div class="cancha-card__body">
+                            <div class="cancha-card__tags">
+                                <span class="tag tag--abierta">Abierta</span>
+                                <span class="tag tag--disponible">Disponible</span>
+                            </div>
+                            <h3>Cancha 2 — Padel Center</h3>
+                            <p>Cipolletti · Vista panorámica · Vestuarios incluidos</p>
+                            <p><strong>Próximo turno libre:</strong> 10:30 hs</p>
+                            <div class="cancha-card__footer">
+                                <a class="btn btn--verde btn--chico" href="reservar.html">Reservar</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cancha-card">
+                        <img class="cancha-card__img" src="imagenes/cancha3" alt="Cancha 3 — Sport Club">
+                        <div class="cancha-card__body">
+                            <div class="cancha-card__tags">
+                                <span class="tag tag--techada">Techada</span>
+                                <span class="tag tag--ocupada">Pocos turnos</span>
+                            </div>
+                            <h3>Cancha 3 — Sport Club</h3>
+                            <p>Plottier · Cancha premium · Estacionamiento</p>
+                            <p><strong>Próximo turno libre:</strong> 20:00 hs</p>
+                            <div class="cancha-card__footer">
+                                <a class="btn btn--verde btn--chico" href="reservar.html">Reservar</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="cancha-card">
+                        <img class="cancha-card__img" src="imagenes/cancha4" alt="Cancha 4 — Río Padel">
+                        <div class="cancha-card__body">
+                            <div class="cancha-card__tags">
+                                <span class="tag tag--abierta">Abierta</span>
+                                <span class="tag tag--disponible">Disponible</span>
+                            </div>
+                            <h3>Cancha 4 — Río Padel</h3>
+                            <p>Centenario · Cancha panorámica · Bar incluido</p>
+                            <p><strong>Próximo turno libre:</strong> 08:00 hs</p>
+                            <div class="cancha-card__footer">
+                                <a class="btn btn--verde btn--chico" href="reservar.html">Reservar</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <section>
+                    <h3>Turdel</h3>
+                    <p>Plataforma de reserva de turnos en canchas de pádel.</p>
+                </section>
+                <section>
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="reservar.html">Reservar</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Contacto</h3>
+                    <p><a href="mailto:info@turdel.com">info@turdel.com</a></p>
+                </section>
+            </div>
+            <div class="container footer-bottom">
+                <p>&copy; 2026 Turdel</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

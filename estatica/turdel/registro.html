@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro — Turdel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img class="brand__logo" src="imagenes/logo" alt="Logo Turdel">
+                    <div class="brand__text">
+                        <span class="brand__name">Reservas de pádel</span>
+                        <span class="brand__title">TURDEL</span>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav__link" href="index.html">Inicio</a>
+                    <a class="nav__link" href="canchas.html">Canchas</a>
+                    <a class="nav__link" href="reservar.html">Reservar</a>
+                    <a class="nav__link" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav__link" href="partidos.html">Partidos</a>
+                    <a class="nav__link" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav__link" href="login.html">Ingresar</a>
+                    <a class="nav__cta is-active" href="registro.html">Registrarse</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="form-page">
+            <div class="form-card">
+                <h1>Crear cuenta</h1>
+                <p class="form-card__sub">Registrate para reservar turnos y organizar partidos.</p>
+
+                <form action="#" method="post" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        <p class="form-error">El nombre es obligatorio.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+                        <p class="form-error">El apellido es obligatorio.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                        <p class="form-error">Ingresá un email válido.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono <span class="opcional">(opcional)</span></label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+54 299 000-0000">
+                        <p class="form-error">Formato de teléfono inválido.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contraseña">Contraseña</label>
+                        <input type="password" id="contraseña" name="contraseña" placeholder="Mínimo 6 caracteres" required minlength="6">
+                        <p class="form-error">La contraseña debe tener al menos 6 caracteres.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmar-contraseña">Confirmar contraseña</label>
+                        <input type="password" id="confirmar-contraseña" name="confirmar_contraseña" placeholder="Repetí tu contraseña" required minlength="6">
+                        <p class="form-error">Las contraseñas no coinciden.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <select id="ciudad" name="ciudad" required>
+                            <option value="">Seleccioná una ciudad</option>
+                            <option value="neuquen">Neuquén Capital</option>
+                            <option value="cipolletti">Cipolletti</option>
+                            <option value="plottier">Plottier</option>
+                            <option value="centenario">Centenario</option>
+                        </select>
+                        <p class="form-error">Seleccioná una ciudad.</p>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn--outline">Limpiar</button>
+                        <button type="submit" class="btn btn--verde">Registrarse</button>
+                    </div>
+                </form>
+
+                <p class="form-link">
+                    ¿Ya tenés cuenta? <a href="login.html">Ingresá acá</a>
+                </p>
+
+                <aside style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--borde);">
+                    <p style="font-size: 0.82rem; color: var(--texto-suave); margin: 0 0 0.75rem;">
+                        Vista previa de validación visual (se activará con JavaScript):
+                    </p>
+                    <div class="form-group form-group--error">
+                        <label for="demo-error">Campo con error</label>
+                        <input type="text" id="demo-error" value="">
+                        <p class="form-error">Este campo es obligatorio.</p>
+                    </div>
+                    <div class="form-group form-group--valid">
+                        <label for="demo-valid">Campo válido</label>
+                        <input type="email" id="demo-valid" value="usuario@turdel.com">
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-bottom">
+                <p>&copy; 2026 Turdel</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
