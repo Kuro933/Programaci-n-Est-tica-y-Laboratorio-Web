@@ -35,14 +35,12 @@
                 <h1 class="page-title">Organizar partidos</h1>
                 <p class="page-subtitle">Unite a partidos abiertos o creá uno nuevo para jugar con otros jugadores.</p>
 
-                <div class="alert alert--info" role="alert">
-                    Ejemplo de alerta: Te uniste al partido del sábado a las 16:00.
-                </div>
+                <div id="alert-partidos" class="alert alert--info" role="alert" hidden></div>
 
                 <section style="margin-bottom: 2rem;">
                     <h2 style="font-size: 1.2rem; color: var(--verde-oscuro); margin-bottom: 1rem;">Crear partido</h2>
                     <div class="form-card form-card--ancho" style="box-shadow: var(--sombra);">
-                        <form action="#" method="post">
+                        <form id="form-partido" action="#" method="post">
                             <div class="filtros-grid">
                                 <div class="form-group">
                                     <label for="partido-fecha">Fecha</label>
@@ -58,6 +56,7 @@
                                         <option value="cancha1">Cancha 1 — Club Norte</option>
                                         <option value="cancha2">Cancha 2 — Padel Center</option>
                                         <option value="cancha3">Cancha 3 — Sport Club</option>
+                                        <option value="cancha4">Cancha 4 — Río Padel</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -81,50 +80,7 @@
                 </section>
 
                 <h2 style="font-size: 1.2rem; color: var(--verde-oscuro); margin-bottom: 1rem;">Partidos abiertos</h2>
-                <div class="partidos-grid">
-                    <article class="partido-card">
-                        <h3>Partido intermedio — Sábado</h3>
-                        <p class="partido-card__meta">
-                            07/06/2026 · 16:00 hs<br>
-                            Cancha 1 — Club Norte · Neuquén Capital
-                        </p>
-                        <div class="partido-card__jugadores">
-                            <span class="jugador-badge">María G.</span>
-                            <span class="jugador-badge">Lucas P.</span>
-                            <span class="jugador-badge jugador-badge--libre">+1 libre</span>
-                            <span class="jugador-badge jugador-badge--libre">+1 libre</span>
-                        </div>
-                        <button type="button" class="btn btn--verde btn--chico">Unirme al partido</button>
-                    </article>
-
-                    <article class="partido-card">
-                        <h3>Partido avanzado — Domingo</h3>
-                        <p class="partido-card__meta">
-                            08/06/2026 · 10:00 hs<br>
-                            Cancha 2 — Padel Center · Cipolletti
-                        </p>
-                        <div class="partido-card__jugadores">
-                            <span class="jugador-badge">Diego R.</span>
-                            <span class="jugador-badge">Ana M.</span>
-                            <span class="jugador-badge">Carlos T.</span>
-                            <span class="jugador-badge jugador-badge--libre">+1 libre</span>
-                        </div>
-                        <button type="button" class="btn btn--verde btn--chico">Unirme al partido</button>
-                    </article>
-
-                    <article class="partido-card">
-                        <h3>Partido principiante — Viernes</h3>
-                        <p class="partido-card__meta">
-                            06/06/2026 · 19:00 hs<br>
-                            Cancha 4 — Río Padel · Centenario
-                        </p>
-                        <div class="partido-card__jugadores">
-                            <span class="jugador-badge">Sofía L.</span>
-                            <span class="jugador-badge jugador-badge--libre">+3 libres</span>
-                        </div>
-                        <button type="button" class="btn btn--verde btn--chico">Unirme al partido</button>
-                    </article>
-                </div>
+                <div id="partidos-grid" class="partidos-grid"></div>
             </div>
         </main>
 
@@ -151,5 +107,8 @@
             </div>
         </footer>
     </div>
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

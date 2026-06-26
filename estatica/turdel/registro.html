@@ -35,7 +35,9 @@
                 <h1>Crear cuenta</h1>
                 <p class="form-card__sub">Registrate para reservar turnos y organizar partidos.</p>
 
-                <form action="#" method="post" novalidate>
+                <div id="alert-registro" class="alert" role="alert" hidden></div>
+
+                <form id="form-registro" action="#" method="post" novalidate>
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -93,21 +95,6 @@
                 <p class="form-link">
                     ¿Ya tenés cuenta? <a href="login.html">Ingresá acá</a>
                 </p>
-
-                <aside style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--borde);">
-                    <p style="font-size: 0.82rem; color: var(--texto-suave); margin: 0 0 0.75rem;">
-                        Vista previa de validación visual (se activará con JavaScript):
-                    </p>
-                    <div class="form-group form-group--error">
-                        <label for="demo-error">Campo con error</label>
-                        <input type="text" id="demo-error" value="">
-                        <p class="form-error">Este campo es obligatorio.</p>
-                    </div>
-                    <div class="form-group form-group--valid">
-                        <label for="demo-valid">Campo válido</label>
-                        <input type="email" id="demo-valid" value="usuario@turdel.com">
-                    </div>
-                </aside>
             </div>
         </main>
 
@@ -117,5 +104,8 @@
             </div>
         </footer>
     </div>
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

@@ -37,23 +37,25 @@
 
                 <div class="stats-resumen">
                     <div class="stat-box">
-                        <span class="stat-box__num">12</span>
+                        <span id="stat-jugados" class="stat-box__num">0</span>
                         <span class="stat-box__label">Partidos jugados</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-box__num">8</span>
+                        <span id="stat-victorias" class="stat-box__num">0</span>
                         <span class="stat-box__label">Victorias</span>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-box__num">4</span>
+                        <span id="stat-derrotas" class="stat-box__num">0</span>
                         <span class="stat-box__label">Derrotas</span>
                     </div>
                 </div>
 
+                <div id="alert-stats" class="alert" role="alert" hidden></div>
+
                 <div class="stats-layout">
                     <section class="reserva-panel">
                         <h2>Cargar resultado</h2>
-                        <form action="#" method="post">
+                        <form id="form-stats" action="#" method="post">
                             <div class="form-group">
                                 <label for="stats-fecha">Fecha del partido</label>
                                 <input type="date" id="stats-fecha" name="fecha" value="2026-05-28" required>
@@ -64,6 +66,7 @@
                                     <option value="cancha1">Cancha 1 — Club Norte</option>
                                     <option value="cancha2">Cancha 2 — Padel Center</option>
                                     <option value="cancha3">Cancha 3 — Sport Club</option>
+                                    <option value="cancha4">Cancha 4 — Río Padel</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -113,36 +116,7 @@
                                         <th>Sets</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>28/05/2026</td>
-                                        <td>Cancha 1</td>
-                                        <td>Lucas y Ana</td>
-                                        <td><span class="estado estado--confirmada">Victoria</span></td>
-                                        <td>6-4, 6-3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>21/05/2026</td>
-                                        <td>Cancha 2</td>
-                                        <td>Diego y Martín</td>
-                                        <td><span class="estado estado--cancelada">Derrota</span></td>
-                                        <td>4-6, 6-4, 3-6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14/05/2026</td>
-                                        <td>Cancha 3</td>
-                                        <td>Carlos y Sofía</td>
-                                        <td><span class="estado estado--confirmada">Victoria</span></td>
-                                        <td>7-5, 6-2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>07/05/2026</td>
-                                        <td>Cancha 1</td>
-                                        <td>Pablo y Elena</td>
-                                        <td><span class="estado estado--confirmada">Victoria</span></td>
-                                        <td>6-1, 6-4</td>
-                                    </tr>
-                                </tbody>
+                                <tbody id="stats-tbody"></tbody>
                             </table>
                         </div>
                     </section>
@@ -172,5 +146,8 @@
             </div>
         </footer>
     </div>
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

@@ -35,14 +35,12 @@
                 <h1 class="page-title">Reservar turno</h1>
                 <p class="page-subtitle">Elegí fecha, cancha y horario. Los turnos ocupados aparecen bloqueados.</p>
 
-                <div class="alert alert--exito" role="alert">
-                    Ejemplo de notificación: Turno reservado con éxito.
-                </div>
+                <div id="alert-reserva" class="alert alert--exito" role="alert" hidden></div>
 
                 <div class="reserva-layout">
                     <aside class="reserva-panel">
                         <h2>Datos de la reserva</h2>
-                        <form action="#" method="post">
+                        <form id="form-reserva" action="#" method="post">
                             <div class="form-group">
                                 <label for="fecha-reserva">Fecha</label>
                                 <input type="date" id="fecha-reserva" name="fecha" value="2026-06-01" required>
@@ -58,7 +56,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="horario-seleccionado">Horario seleccionado</label>
-                                <input type="text" id="horario-seleccionado" name="horario" value="10:00" readonly placeholder="Seleccioná un horario">
+                                <input type="text" id="horario-seleccionado" name="horario" value="" readonly placeholder="Seleccioná un horario">
                             </div>
                             <div class="form-group">
                                 <label for="jugadores">Cantidad de jugadores</label>
@@ -79,11 +77,9 @@
                         </form>
                     </aside>
 
-                    <section class="reserva-panel horarios-section" aria-label="Horarios disponibles">
-                        <h2>Horarios — Cancha 1 — Club Norte</h2>
-                        <p style="margin: 0 0 1rem; color: var(--texto-suave); font-size: 0.9rem;">
-                            Domingo 1 de junio de 2026
-                        </p>
+                    <section id="seccion-horarios" class="reserva-panel horarios-section" aria-label="Horarios disponibles">
+                        <h2 id="titulo-horarios">Horarios</h2>
+                        <p id="subtitulo-fecha" style="margin: 0 0 1rem; color: var(--texto-suave); font-size: 0.9rem;"></p>
 
                         <div class="horarios-leyenda">
                             <span class="leyenda-item leyenda-item--disponible"><span></span> Disponible</span>
@@ -91,31 +87,9 @@
                             <span class="leyenda-item leyenda-item--seleccionado"><span></span> Seleccionado</span>
                         </div>
 
-                        <h3>Mañana</h3>
-                        <div class="horarios-grid" role="group" aria-label="Horarios de la mañana">
-                            <button type="button" class="horario horario--disponible">08:00</button>
-                            <button type="button" class="horario horario--ocupado" disabled>09:00</button>
-                            <button type="button" class="horario horario--seleccionado">10:00</button>
-                            <button type="button" class="horario horario--disponible">11:00</button>
-                            <button type="button" class="horario horario--ocupado" disabled>12:00</button>
-                        </div>
-
-                        <h3 style="margin-top: 1.25rem;">Tarde</h3>
-                        <div class="horarios-grid" role="group" aria-label="Horarios de la tarde">
-                            <button type="button" class="horario horario--ocupado" disabled>14:00</button>
-                            <button type="button" class="horario horario--disponible">15:00</button>
-                            <button type="button" class="horario horario--disponible">16:00</button>
-                            <button type="button" class="horario horario--ocupado" disabled>17:00</button>
-                            <button type="button" class="horario horario--disponible">18:00</button>
-                        </div>
-
-                        <h3 style="margin-top: 1.25rem;">Noche</h3>
-                        <div class="horarios-grid" role="group" aria-label="Horarios de la noche">
-                            <button type="button" class="horario horario--disponible">19:00</button>
-                            <button type="button" class="horario horario--disponible">20:00</button>
-                            <button type="button" class="horario horario--ocupado" disabled>21:00</button>
-                            <button type="button" class="horario horario--disponible">22:00</button>
-                        </div>
+                        <div id="horarios-manana" class="horarios-grid" role="group" aria-label="Horarios de la mañana"></div>
+                        <div id="horarios-tarde" class="horarios-grid" role="group" aria-label="Horarios de la tarde"></div>
+                        <div id="horarios-noche" class="horarios-grid" role="group" aria-label="Horarios de la noche"></div>
                     </section>
                 </div>
             </div>
@@ -144,5 +118,8 @@
             </div>
         </footer>
     </div>
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

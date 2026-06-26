@@ -75,7 +75,7 @@ a {
 .brand__logo {
     width: 48px;
     height: 48px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 50%;
     background: var(--blanco);
     padding: 4px;
