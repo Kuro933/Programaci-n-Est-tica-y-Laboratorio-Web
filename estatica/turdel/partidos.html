@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Partidos — Turdel</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/comun.css">
+    <link rel="stylesheet" href="css/partidos.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -37,9 +38,9 @@
 
                 <div id="alert-partidos" class="alert alert--info" role="alert" hidden></div>
 
-                <section style="margin-bottom: 2rem;">
-                    <h2 style="font-size: 1.2rem; color: var(--verde-oscuro); margin-bottom: 1rem;">Crear partido</h2>
-                    <div class="form-card form-card--ancho" style="box-shadow: var(--sombra);">
+                <section class="partidos-crear">
+                    <h2>Crear partido</h2>
+                    <div class="form-card form-card--ancho partidos-form">
                         <form id="form-partido" action="#" method="post">
                             <div class="filtros-grid">
                                 <div class="form-group">
@@ -79,8 +80,10 @@
                     </div>
                 </section>
 
-                <h2 style="font-size: 1.2rem; color: var(--verde-oscuro); margin-bottom: 1rem;">Partidos abiertos</h2>
-                <div id="partidos-grid" class="partidos-grid"></div>
+                <section class="partidos-lista">
+                    <h2>Partidos abiertos</h2>
+                    <div id="partidos-grid" class="partidos-grid"></div>
+                </section>
             </div>
         </main>
 

@@ -1,0 +1,61 @@
+.partidos-form {
+    box-shadow: var(--sombra);
+}
+
+.partidos-crear {
+    margin-bottom: 2rem;
+}
+
+.partidos-crear h2,
+.partidos-lista h2 {
+    font-size: 1.2rem;
+    color: var(--verde-oscuro);
+    margin-bottom: 1rem;
+}
+
+.partidos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+}
+
+.partido-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 1.25rem;
+    box-shadow: var(--sombra);
+}
+
+.partido-card h3 {
+    margin: 0 0 0.5rem;
+    color: var(--verde-oscuro);
+}
+
+.partido-card__meta {
+    margin: 0 0 0.75rem;
+    font-size: 0.88rem;
+    color: var(--texto-suave);
+}
+
+.partido-card__jugadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.jugador-badge {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: var(--verde-suave);
+    color: var(--verde-oscuro);
+    font-weight: 600;
+}
+
+.jugador-badge--libre {
+    background: #e9ecef;
+    color: var(--texto-suave);
+    border: 1px dashed #adb5bd;
+}

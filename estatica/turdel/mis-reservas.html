@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis reservas — Turdel</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/comun.css">
+    <link rel="stylesheet" href="css/mis-reservas.css">
 </head>
 <body>
     <div class="page-wrapper">
@@ -35,7 +36,7 @@
                 <h1 class="page-title">Mis reservas</h1>
                 <p class="page-subtitle">Administrá tus turnos: creá nuevas reservas, modificá horarios o cancelá cuando lo necesites.</p>
 
-                <p style="margin-bottom: 1.25rem;">
+                <p class="mis-reservas__nueva">
                     <a class="btn btn--verde" href="reservar.html">+ Nueva reserva</a>
                 </p>
 
@@ -55,9 +56,9 @@
                     </table>
                 </div>
 
-                <section id="modificar-section" style="margin-top: 2rem;" hidden>
-                    <h2 style="font-size: 1.2rem; color: var(--verde-oscuro); margin-bottom: 1rem;">Modificar reserva</h2>
-                    <div class="reserva-panel" style="max-width: 480px;">
+                <section id="modificar-section" hidden>
+                    <h2>Modificar reserva</h2>
+                    <div class="reserva-panel">
                         <form id="form-modificar" action="#" method="post">
                             <div class="form-group">
                                 <label for="mod-fecha">Nueva fecha</label>

@@ -48,6 +48,23 @@ a {
     margin-inline: auto;
 }
 
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-title {
+    margin: 0 0 0.35rem;
+    font-size: 1.85rem;
+    color: var(--verde-oscuro);
+}
+
+.page-subtitle {
+    margin: 0 0 1.75rem;
+    color: var(--texto-suave);
+}
+
 /* Header */
 .site-header {
     background: linear-gradient(180deg, var(--verde-oscuro) 0%, #081c15 100%);
@@ -142,71 +159,6 @@ a {
     filter: brightness(1.08);
 }
 
-/* Hero */
-.hero {
-    position: relative;
-    background: var(--verde-oscuro);
-    color: var(--blanco);
-    overflow: hidden;
-}
-
-.hero__bg {
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(105deg, rgba(27, 67, 50, 0.92) 0%, rgba(45, 106, 79, 0.75) 45%, rgba(27, 67, 50, 0.4) 100%),
-        url("../imagenes/hero-cancha") center/cover no-repeat;
-}
-
-.hero__inner {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
-    gap: 2rem;
-    padding: 3.5rem 0;
-    min-height: 380px;
-}
-
-.hero__title {
-    margin: 0 0 1rem;
-    font-size: clamp(2rem, 4.5vw, 3rem);
-    line-height: 1.05;
-    font-weight: 800;
-}
-
-.hero__title span {
-    color: var(--acento);
-}
-
-.hero__lead {
-    margin: 0 0 1.5rem;
-    max-width: 42ch;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1.05rem;
-}
-
-.hero__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-}
-
-.hero__img {
-    justify-self: end;
-    width: min(360px, 100%);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--sombra);
-    border: 3px solid rgba(255, 255, 255, 0.15);
-}
-
-.hero__img img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-}
-
 /* Botones */
 .btn {
     display: inline-block;
@@ -294,272 +246,7 @@ a {
     margin-inline: auto;
 }
 
-/* Cards de características */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-}
-
-.feature-card {
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: 14px;
-    padding: 1.5rem;
-    box-shadow: var(--sombra);
-}
-
-.feature-card__icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: var(--verde-suave);
-    display: grid;
-    place-items: center;
-    font-size: 1.4rem;
-    margin-bottom: 0.85rem;
-}
-
-.feature-card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.05rem;
-    color: var(--verde-oscuro);
-}
-
-.feature-card p {
-    margin: 0;
-    color: var(--texto-suave);
-    font-size: 0.92rem;
-}
-
-/* Canchas */
-.filtros {
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: 14px;
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 1.75rem;
-    box-shadow: var(--sombra);
-}
-
-.filtros h2 {
-    margin: 0 0 1rem;
-    font-size: 1.1rem;
-    color: var(--verde-oscuro);
-}
-
-.filtros-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    align-items: end;
-}
-
-.filtros-grid label {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--verde-oscuro);
-}
-
-.canchas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.25rem;
-}
-
-.cancha-card {
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: var(--sombra);
-    display: flex;
-    flex-direction: column;
-}
-
-.cancha-card__img {
-    height: 160px;
-    object-fit: cover;
-    width: 100%;
-    background: var(--verde-suave);
-}
-
-.cancha-card__body {
-    padding: 1.1rem 1.25rem 1.25rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.cancha-card__tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-}
-
-.tag {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.55rem;
-    border-radius: 999px;
-    background: var(--verde-suave);
-    color: var(--verde-oscuro);
-}
-
-.tag--techada {
-    background: #dbeafe;
-    color: #1e40af;
-}
-
-.tag--abierta {
-    background: #fef3c7;
-    color: #92400e;
-}
-
-.tag--disponible {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.tag--ocupada {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-.cancha-card h3 {
-    margin: 0;
-    font-size: 1.15rem;
-    color: var(--verde-oscuro);
-}
-
-.cancha-card p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--texto-suave);
-}
-
-.cancha-card__footer {
-    margin-top: auto;
-    padding-top: 0.75rem;
-}
-
-/* Horarios */
-.reserva-layout {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 1.5rem;
-    align-items: start;
-}
-
-.reserva-panel {
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: 14px;
-    padding: 1.25rem 1.5rem;
-    box-shadow: var(--sombra);
-}
-
-.reserva-panel h2 {
-    margin: 0 0 1rem;
-    font-size: 1.1rem;
-    color: var(--verde-oscuro);
-}
-
-.horarios-section h3 {
-    margin: 0 0 0.75rem;
-    font-size: 1rem;
-    color: var(--verde-oscuro);
-}
-
-.horarios-leyenda {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.82rem;
-    color: var(--texto-suave);
-}
-
-.leyenda-item {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.leyenda-item span {
-    width: 14px;
-    height: 14px;
-    border-radius: 4px;
-}
-
-.leyenda-item--disponible span {
-    background: var(--verde-suave);
-    border: 2px solid var(--verde-claro);
-}
-
-.leyenda-item--ocupado span {
-    background: var(--ocupado);
-}
-
-.leyenda-item--seleccionado span {
-    background: var(--verde-claro);
-}
-
-.horarios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
-    gap: 0.5rem;
-}
-
-.horario {
-    padding: 0.55rem 0.35rem;
-    font: inherit;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
-}
-
-.horario--disponible {
-    background: var(--verde-suave);
-    color: var(--verde-oscuro);
-    border-color: rgba(45, 106, 79, 0.25);
-}
-
-.horario--disponible:hover {
-    border-color: var(--verde-claro);
-    transform: translateY(-1px);
-}
-
-.horario--ocupado {
-    background: #e9ecef;
-    color: #868e96;
-    cursor: not-allowed;
-    text-decoration: line-through;
-}
-
-.horario--seleccionado {
-    background: var(--verde-claro);
-    color: var(--blanco);
-    border-color: var(--verde-oscuro);
-    box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.35);
-}
-
 /* Formularios */
-.form-page {
-    display: flex;
-    justify-content: center;
-    padding: 2.5rem 1rem 3rem;
-}
-
 .form-card {
     width: 100%;
     max-width: 480px;
@@ -678,7 +365,38 @@ a {
     text-decoration: underline;
 }
 
-/* Alertas / notificaciones */
+.filtros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    align-items: end;
+}
+
+.filtros-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+}
+
+/* Paneles */
+.reserva-panel {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--sombra);
+}
+
+.reserva-panel h2 {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+    color: var(--verde-oscuro);
+}
+
+/* Alertas */
 .alert {
     padding: 0.85rem 1rem;
     border-radius: 10px;
@@ -771,91 +489,6 @@ a {
     color: #991b1b;
 }
 
-/* Partidos */
-.partidos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.25rem;
-}
-
-.partido-card {
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: 14px;
-    padding: 1.25rem;
-    box-shadow: var(--sombra);
-}
-
-.partido-card h3 {
-    margin: 0 0 0.5rem;
-    color: var(--verde-oscuro);
-}
-
-.partido-card__meta {
-    margin: 0 0 0.75rem;
-    font-size: 0.88rem;
-    color: var(--texto-suave);
-}
-
-.partido-card__jugadores {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
-}
-
-.jugador-badge {
-    font-size: 0.78rem;
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    background: var(--verde-suave);
-    color: var(--verde-oscuro);
-    font-weight: 600;
-}
-
-.jugador-badge--libre {
-    background: #e9ecef;
-    color: var(--texto-suave);
-    border: 1px dashed #adb5bd;
-}
-
-/* Estadísticas */
-.stats-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    align-items: start;
-}
-
-.stats-resumen {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.stat-box {
-    background: var(--blanco);
-    border: 1px solid var(--borde);
-    border-radius: 12px;
-    padding: 1.1rem;
-    text-align: center;
-    box-shadow: var(--sombra);
-}
-
-.stat-box__num {
-    display: block;
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--verde-claro);
-}
-
-.stat-box__label {
-    font-size: 0.82rem;
-    color: var(--texto-suave);
-    font-weight: 600;
-}
-
 /* Footer */
 .site-footer {
     background: var(--verde-oscuro);
@@ -906,59 +539,8 @@ a {
     color: rgba(255, 255, 255, 0.55);
 }
 
-.page-wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.page-title {
-    margin: 0 0 0.35rem;
-    font-size: 1.85rem;
-    color: var(--verde-oscuro);
-}
-
-.page-subtitle {
-    margin: 0 0 1.75rem;
-    color: var(--texto-suave);
-}
-
-/* Responsive */
 @media (max-width: 900px) {
-    .hero__inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero__lead {
-        margin-inline: auto;
-    }
-
-    .hero__actions {
-        justify-content: center;
-    }
-
-    .hero__img {
-        justify-self: center;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .reserva-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-layout {
-        grid-template-columns: 1fr;
-    }
-
     .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .stats-resumen {
         grid-template-columns: 1fr;
     }
 }

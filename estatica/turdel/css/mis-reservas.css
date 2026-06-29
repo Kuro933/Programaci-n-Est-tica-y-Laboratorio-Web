@@ -1,0 +1,17 @@
+.mis-reservas__nueva {
+    margin-bottom: 1.25rem;
+}
+
+#modificar-section {
+    margin-top: 2rem;
+}
+
+#modificar-section h2 {
+    font-size: 1.2rem;
+    color: var(--verde-oscuro);
+    margin-bottom: 1rem;
+}
+
+#modificar-section .reserva-panel {
+    max-width: 480px;
+}

@@ -1,0 +1,99 @@
+.filtros {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+    box-shadow: var(--sombra);
+}
+
+.filtros h2 {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+    color: var(--verde-oscuro);
+}
+
+.canchas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.cancha-card {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+}
+
+.cancha-card__img {
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+    background: var(--verde-suave);
+}
+
+.cancha-card__body {
+    padding: 1.1rem 1.25rem 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cancha-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: var(--verde-suave);
+    color: var(--verde-oscuro);
+}
+
+.tag--techada {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.tag--abierta {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.tag--disponible {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.tag--ocupada {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.cancha-card h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--verde-oscuro);
+}
+
+.cancha-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+
+.cancha-card__footer {
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
