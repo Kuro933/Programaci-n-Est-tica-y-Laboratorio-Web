@@ -1,42 +1,3 @@
-const CANCHAS = [
-    {
-        id: "cancha1",
-        nombre: "Cancha 1 — Club Norte",
-        ubicacion: "neuquen",
-        ubicacionLabel: "Neuquén Capital",
-        tipo: "techada",
-        imagen: "imagenes/cancha_1.jpg",
-        descripcion: "Neuquén Capital · Césped sintético · Iluminación LED"
-    },
-    {
-        id: "cancha2",
-        nombre: "Cancha 2 — Padel Center",
-        ubicacion: "cipolletti",
-        ubicacionLabel: "Cipolletti",
-        tipo: "abierta",
-        imagen: "imagenes/cancha_2.jpg",
-        descripcion: "Cipolletti · Vista panorámica · Vestuarios incluidos"
-    },
-    {
-        id: "cancha3",
-        nombre: "Cancha 3 — Sport Club",
-        ubicacion: "plottier",
-        ubicacionLabel: "Plottier",
-        tipo: "techada",
-        imagen: "imagenes/cancha_3.jpg",
-        descripcion: "Plottier · Cancha premium · Estacionamiento"
-    },
-    {
-        id: "cancha4",
-        nombre: "Cancha 4 — Río Padel",
-        ubicacion: "centenario",
-        ubicacionLabel: "Centenario",
-        tipo: "abierta",
-        imagen: "imagenes/cancha_4.jpg",
-        descripcion: "Centenario · Cancha panorámica · Bar incluido"
-    }
-];
-
 const HORARIOS_TODOS = [
     "08:00", "09:00", "10:00", "11:00", "12:00",
     "14:00", "15:00", "16:00", "17:00", "18:00",
@@ -47,14 +8,57 @@ const HORARIOS_MANANA = ["08:00", "09:00", "10:00", "11:00", "12:00"];
 const HORARIOS_TARDE = ["14:00", "15:00", "16:00", "17:00", "18:00"];
 const HORARIOS_NOCHE = ["19:00", "20:00", "21:00", "22:00"];
 
-function obtenerCanchaPorId(id) {
+function obtenerCanchas() {
+    const canchas = obtenerCanchasStorage();
+    return canchas;
+}
+
+function obtenerCanchasDeClub(clubId) {
+    const canchas = obtenerCanchas();
+    const resultado = [];
     let i;
-    for (i = 0; i < CANCHAS.length; i++) {
-        if (CANCHAS[i].id === id) {
-            return CANCHAS[i];
+
+    for (i = 0; i < canchas.length; i++) {
+        if (canchas[i].clubId === clubId) {
+            resultado.push(canchas[i]);
+        }
+    }
+
+    return resultado;
+}
+
+function obtenerCanchaPorId(id) {
+    const canchas = obtenerCanchas();
+    let i;
+
+    for (i = 0; i < canchas.length; i++) {
+        if (canchas[i].id === id) {
+            return canchas[i];
         }
     }
     return null;
+}
+
+function obtenerHorariosCancha(canchaId) {
+    const cancha = obtenerCanchaPorId(canchaId);
+
+    if (!cancha || !cancha.horariosDisponibles || cancha.horariosDisponibles.length === 0) {
+        return HORARIOS_TODOS.slice();
+    }
+
+    return cancha.horariosDisponibles;
+}
+
+function horarioEstaDisponibleEnCancha(canchaId, horario) {
+    const horarios = obtenerHorariosCancha(canchaId);
+    let i;
+
+    for (i = 0; i < horarios.length; i++) {
+        if (horarios[i] === horario) {
+            return true;
+        }
+    }
+    return false;
 }
 
 function formatearFecha(fechaISO) {
@@ -104,10 +108,12 @@ function turnoEstaOcupado(fecha, canchaId, horario, reservas, reservaIgnoradaId)
 }
 
 function contarTurnosLibres(fecha, canchaId, reservas) {
+    const horarios = obtenerHorariosCancha(canchaId);
     let libres = 0;
     let i;
-    for (i = 0; i < HORARIOS_TODOS.length; i++) {
-        if (!turnoEstaOcupado(fecha, canchaId, HORARIOS_TODOS[i], reservas, null)) {
+
+    for (i = 0; i < horarios.length; i++) {
+        if (!turnoEstaOcupado(fecha, canchaId, horarios[i], reservas, null)) {
             libres++;
         }
     }
@@ -115,10 +121,12 @@ function contarTurnosLibres(fecha, canchaId, reservas) {
 }
 
 function obtenerProximoTurnoLibre(fecha, canchaId, reservas) {
+    const horarios = obtenerHorariosCancha(canchaId);
     let i;
-    for (i = 0; i < HORARIOS_TODOS.length; i++) {
-        if (!turnoEstaOcupado(fecha, canchaId, HORARIOS_TODOS[i], reservas, null)) {
-            return HORARIOS_TODOS[i];
+
+    for (i = 0; i < horarios.length; i++) {
+        if (!turnoEstaOcupado(fecha, canchaId, horarios[i], reservas, null)) {
+            return horarios[i];
         }
     }
     return null;
@@ -128,4 +136,17 @@ function obtenerNombrePagina() {
     const ruta = window.location.pathname;
     const partes = ruta.split("/");
     return partes[partes.length - 1];
+}
+
+function obtenerUsuarioPorId(id) {
+    const usuarios = obtenerUsuarios();
+    let i;
+
+    for (i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].id === id) {
+            return usuarios[i];
+        }
+    }
+
+    return null;
 }

@@ -89,7 +89,7 @@ a {
     gap: 0.75rem;
 }
 
-.brand__logo {
+.brand_logo {
     width: 48px;
     height: 48px;
     object-fit: cover;
@@ -98,7 +98,7 @@ a {
     padding: 4px;
 }
 
-.brand__text {
+.brand_text {
     display: flex;
     flex-direction: column;
     line-height: 1.1;
@@ -125,7 +125,12 @@ a {
     flex-wrap: wrap;
 }
 
-.nav__link {
+.nav--oculto,
+.nav [hidden] {
+    display: none !important;
+}
+
+.nav_link {
     color: rgba(255, 255, 255, 0.88);
     font-size: 0.82rem;
     font-weight: 600;
@@ -136,11 +141,11 @@ a {
     transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.nav__link:hover {
+.nav_link:hover {
     color: var(--blanco);
 }
 
-.nav__link.is-active {
+.nav_link.is-active {
     color: var(--acento);
     border-bottom-color: var(--acento);
 }

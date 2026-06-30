@@ -59,3 +59,126 @@
     color: var(--texto-suave);
     border: 1px dashed #adb5bd;
 }
+
+.jugador-badge--creador {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.partido-card__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.partido-card__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.partido-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+}
+
+.partido-badge--propio {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.partido-badge--completo {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.partido-badge--inscripto {
+    background: var(--verde-suave);
+    color: var(--verde-oscuro);
+}
+
+.partido-card__inscripcion {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: var(--verde-oscuro);
+}
+
+.partido-card__organizador {
+    margin: 0 0 0.75rem;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+
+.partido-card__descripcion {
+    margin: 0 0 0.75rem;
+    font-size: 0.88rem;
+    color: var(--texto);
+    font-style: italic;
+}
+
+.partido-card__jugadores-label {
+    margin: 0 0 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+}
+
+.partido-card__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.partido-card__llenar {
+    margin-top: 0.75rem;
+    padding-top: 0.85rem;
+    border-top: 1px dashed var(--borde);
+}
+
+.partido-card__llenar p {
+    margin: 0 0 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--verde-oscuro);
+}
+
+.partido-card__llenar-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.partido-card__llenar-form input {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #c5d4e0;
+    border-radius: 8px;
+    font: inherit;
+}
+
+.partido-card__llenar-form input:focus {
+    outline: none;
+    border-color: var(--verde-claro);
+    box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.25);
+}
+
+.partido-card__llenar-ayuda {
+    margin: 0.5rem 0 0;
+    font-size: 0.78rem;
+    color: var(--texto-suave);
+}
+
+.partido-card--propio {
+    border-color: rgba(244, 162, 97, 0.45);
+    box-shadow: 0 8px 24px rgba(244, 162, 97, 0.12);
+}

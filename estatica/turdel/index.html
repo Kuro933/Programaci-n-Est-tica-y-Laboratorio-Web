@@ -13,21 +13,22 @@
         <header class="site-header">
             <div class="container header-inner">
                 <a class="brand" href="index.html">
-                    <img class="brand__logo" src="imagenes/padel_club_logo.png" alt="Logo Turdel">
-                    <div class="brand__text">
+                    <img class="brand_logo" src="imagenes/padel_club_logo.png" alt="Logo Turdel">
+                    <div class="brand_text">
                         <span class="brand__name">Reservas de pádel</span>
                         <span class="brand__title">TURDEL</span>
                     </div>
                 </a>
                 <nav class="nav" aria-label="Navegación principal">
-                    <a class="nav__link is-active" href="index.html">Inicio</a>
-                    <a class="nav__link" href="canchas.html">Canchas</a>
-                    <a class="nav__link" href="reservar.html">Reservar</a>
-                    <a class="nav__link" href="mis-reservas.html">Mis reservas</a>
-                    <a class="nav__link" href="partidos.html">Partidos</a>
-                    <a class="nav__link" href="estadisticas.html">Estadísticas</a>
-                    <a class="nav__link" href="login.html">Ingresar</a>
-                    <a class="nav__cta" href="registro.html">Registrarse</a>
+                    <a class="nav_link is-active" href="index.html">Inicio</a>
+                    <a class="nav_link" href="canchas.html">Canchas</a>
+                    <a class="nav_link nav__jugador nav__reservar" href="reservar.html">Reservar</a>
+                    <a class="nav_link nav__jugador nav__mis-reservas" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav_link nav__jugador" href="partidos.html">Partidos</a>
+                    <a class="nav_link nav__jugador" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav_link nav__club" href="panel-club.html" hidden>Panel del club</a>
+                    <a class="nav_link nav__login" href="login.html">Ingresar</a>
+                    <a class="nav__cta nav__registro" href="registro.html">Registrarse</a>
                 </nav>
             </div>
         </header>
@@ -46,7 +47,7 @@
                             y gestioná todas tus reservas desde un solo lugar.
                         </p>
                         <div class="hero__actions">
-                            <a class="btn btn--primario" href="reservar.html">Reservar turno</a>
+                            <a class="btn btn--primario enlace-jugador" href="reservar.html">Reservar turno</a>
                             <a class="btn btn--secundario" href="canchas.html">Ver canchas</a>
                         </div>
                     </div>
@@ -100,6 +101,36 @@
             <section class="section section--gris">
                 <div class="container">
                     <header class="section-head">
+                        <h2>Para clubes</h2>
+                        <p>Gestioná tus instalaciones y optimizá la ocupación de tus canchas desde un panel exclusivo.</p>
+                    </header>
+                    <div class="features-grid">
+                        <article class="feature-card">
+                            <div class="feature-card__icon" aria-hidden="true">🏟️</div>
+                            <h3>Gestionar canchas</h3>
+                            <p>Agregá, editá o eliminá las canchas de tu club con toda su información.</p>
+                        </article>
+                        <article class="feature-card">
+                            <div class="feature-card__icon" aria-hidden="true">🕐</div>
+                            <h3>Definir horarios</h3>
+                            <p>Elegí qué turnos están habilitados para reservas en cada una de tus canchas.</p>
+                        </article>
+                        <article class="feature-card">
+                            <div class="feature-card__icon" aria-hidden="true">📈</div>
+                            <h3>Controlar ocupación</h3>
+                            <p>Visualizá en tiempo real qué turnos están libres u ocupados y quién reservó.</p>
+                        </article>
+                    </div>
+                    <p class="canchas-destacadas__cta">
+                        <a class="btn btn--primario" href="registro.html?tipo=club">Registrar mi club</a>
+                        <a class="btn btn--outline" href="panel-club.html">Ir al panel del club</a>
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <header class="section-head">
                         <h2>Canchas destacadas</h2>
                         <p>Algunas de las instalaciones disponibles para reservar hoy.</p>
                     </header>
@@ -113,9 +144,6 @@
                                 </div>
                                 <h3>Cancha 1 — Club Norte</h3>
                                 <p>Neuquén Capital · Césped sintético · Iluminación LED</p>
-                                <div class="cancha-card__footer">
-                                    <a class="btn btn--verde btn--chico" href="reservar.html">Reservar</a>
-                                </div>
                             </div>
                         </article>
                         <article class="cancha-card">
@@ -127,9 +155,6 @@
                                 </div>
                                 <h3>Cancha 2 — Padel Center</h3>
                                 <p>Cipolletti · Vista panorámica · Vestuarios incluidos</p>
-                                <div class="cancha-card__footer">
-                                    <a class="btn btn--verde btn--chico" href="reservar.html">Reservar</a>
-                                </div>
                             </div>
                         </article>
                         <article class="cancha-card">
@@ -141,9 +166,6 @@
                                 </div>
                                 <h3>Cancha 3 — Sport Club</h3>
                                 <p>Plottier · Cancha premium · Estacionamiento</p>
-                                <div class="cancha-card__footer">
-                                    <a class="btn btn--verde btn--chico" href="reservar.html">Reservar</a>
-                                </div>
                             </div>
                         </article>
                     </div>
@@ -167,6 +189,7 @@
                         <li><a href="reservar.html">Reservar</a></li>
                         <li><a href="partidos.html">Partidos</a></li>
                         <li><a href="estadisticas.html">Estadísticas</a></li>
+                        <li><a href="panel-club.html">Panel del club</a></li>
                     </ul>
                 </section>
                 <section>

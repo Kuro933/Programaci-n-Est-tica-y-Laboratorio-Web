@@ -12,21 +12,22 @@
         <header class="site-header">
             <div class="container header-inner">
                 <a class="brand" href="index.html">
-                    <img class="brand__logo" src="imagenes/logo" alt="Logo Turdel">
-                    <div class="brand__text">
+                    <img class="brand_logo" src="imagenes/padel_club_logo.png" alt="Logo Turdel">
+                    <div class="brand_text">
                         <span class="brand__name">Reservas de pádel</span>
                         <span class="brand__title">TURDEL</span>
                     </div>
                 </a>
                 <nav class="nav" aria-label="Navegación principal">
-                    <a class="nav__link" href="index.html">Inicio</a>
-                    <a class="nav__link" href="canchas.html">Canchas</a>
-                    <a class="nav__link" href="reservar.html">Reservar</a>
-                    <a class="nav__link" href="mis-reservas.html">Mis reservas</a>
-                    <a class="nav__link" href="partidos.html">Partidos</a>
-                    <a class="nav__link" href="estadisticas.html">Estadísticas</a>
-                    <a class="nav__link" href="login.html">Ingresar</a>
-                    <a class="nav__cta is-active" href="registro.html">Registrarse</a>
+                    <a class="nav_link" href="index.html">Inicio</a>
+                    <a class="nav_link" href="canchas.html">Canchas</a>
+                    <a class="nav_link nav__jugador" href="reservar.html">Reservar</a>
+                    <a class="nav_link nav__jugador" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav_link nav__jugador" href="partidos.html">Partidos</a>
+                    <a class="nav_link nav__jugador" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav_link nav__club" href="panel-club.html" hidden>Panel del club</a>
+                    <a class="nav_link nav__login" href="login.html">Ingresar</a>
+                    <a class="nav__cta nav__registro is-active" href="registro.html">Registrarse</a>
                 </nav>
             </div>
         </header>
@@ -34,18 +35,26 @@
         <main class="form-page">
             <div class="form-card">
                 <h1>Crear cuenta</h1>
-                <p class="form-card__sub">Registrate para reservar turnos y organizar partidos.</p>
+                <p class="form-card__sub">Registrate como jugador o como club para gestionar tus canchas.</p>
 
                 <div id="alert-registro" class="alert" role="alert" hidden></div>
 
                 <form id="form-registro" action="#" method="post" novalidate>
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
+                        <label for="tipo-cuenta">Tipo de cuenta</label>
+                        <select id="tipo-cuenta" name="tipo_cuenta" required>
+                            <option value="jugador">Jugador</option>
+                            <option value="club">Club / Complejo deportivo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre" id="label-nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
                         <p class="form-error">El nombre es obligatorio.</p>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group" id="grupo-apellido">
                         <label for="apellido">Apellido</label>
                         <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
                         <p class="form-error">El apellido es obligatorio.</p>

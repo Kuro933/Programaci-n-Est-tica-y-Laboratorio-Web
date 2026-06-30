@@ -12,21 +12,22 @@
         <header class="site-header">
             <div class="container header-inner">
                 <a class="brand" href="index.html">
-                    <img class="brand__logo" src="imagenes/logo" alt="Logo Turdel">
-                    <div class="brand__text">
+                    <img class="brand_logo" src="imagenes/padel_club_logo.png" alt="Logo Turdel">
+                    <div class="brand_text">
                         <span class="brand__name">Reservas de pádel</span>
                         <span class="brand__title">TURDEL</span>
                     </div>
                 </a>
                 <nav class="nav" aria-label="Navegación principal">
-                    <a class="nav__link" href="index.html">Inicio</a>
-                    <a class="nav__link" href="canchas.html">Canchas</a>
-                    <a class="nav__link" href="reservar.html">Reservar</a>
-                    <a class="nav__link" href="mis-reservas.html">Mis reservas</a>
-                    <a class="nav__link" href="partidos.html">Partidos</a>
-                    <a class="nav__link is-active" href="estadisticas.html">Estadísticas</a>
-                    <a class="nav__link" href="login.html">Ingresar</a>
-                    <a class="nav__cta" href="registro.html">Registrarse</a>
+                    <a class="nav_link" href="index.html">Inicio</a>
+                    <a class="nav_link" href="canchas.html">Canchas</a>
+                    <a class="nav_link nav__jugador" href="reservar.html">Reservar</a>
+                    <a class="nav_link nav__jugador" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav_link nav__jugador" href="partidos.html">Partidos</a>
+                    <a class="nav_link nav__jugador is-active" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav_link nav__club" href="panel-club.html" hidden>Panel del club</a>
+                    <a class="nav_link nav__login" href="login.html">Ingresar</a>
+                    <a class="nav__cta nav__registro" href="registro.html">Registrarse</a>
                 </nav>
             </div>
         </header>
@@ -55,8 +56,8 @@
 
                 <div class="stats-layout">
                     <section class="reserva-panel">
-                        <h2>Cargar resultado</h2>
-                        <form id="form-stats" action="#" method="post">
+                        <h2 id="stats-form-titulo">Cargar resultado</h2>
+                        <form id="form-stats" action="#" method="post" novalidate>
                             <div class="form-group">
                                 <label for="stats-fecha">Fecha del partido</label>
                                 <input type="date" id="stats-fecha" name="fecha" value="2026-05-28" required>
@@ -83,23 +84,27 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="stats-set1">Set 1 (ej: 6-4)</label>
-                                <input type="text" id="stats-set1" name="set1" placeholder="6-4">
+                                <label for="stats-set1">Set 1</label>
+                                <input type="text" id="stats-set1" name="set1" placeholder="6-4" required>
+                                <p class="form-error">Formato inválido. Usá numero-numero (enteros positivos menores a 7).</p>
                             </div>
                             <div class="form-group">
                                 <label for="stats-set2">Set 2</label>
-                                <input type="text" id="stats-set2" name="set2" placeholder="4-6">
+                                <input type="text" id="stats-set2" name="set2" placeholder="4-6" required>
+                                <p class="form-error">Formato inválido. Usá numero-numero (enteros positivos menores a 7).</p>
                             </div>
                             <div class="form-group">
                                 <label for="stats-set3">Set 3 <span class="opcional">(opcional)</span></label>
                                 <input type="text" id="stats-set3" name="set3" placeholder="7-5">
+                                <p class="form-error">Formato inválido. Usá numero-numero (enteros positivos menores a 7).</p>
                             </div>
                             <div class="form-group">
                                 <label for="stats-notas">Notas <span class="opcional">(opcional)</span></label>
                                 <textarea id="stats-notas" name="notas" rows="2" placeholder="Comentarios del partido"></textarea>
                             </div>
                             <div class="form-actions">
-                                <button type="submit" class="btn btn--verde">Guardar resultado</button>
+                                <button type="button" id="btn-cancelar-stats" class="btn btn--outline" hidden>Cancelar</button>
+                                <button type="submit" id="btn-guardar-stats" class="btn btn--verde">Guardar resultado</button>
                             </div>
                         </form>
                     </section>
@@ -115,6 +120,7 @@
                                         <th>Rival</th>
                                         <th>Resultado</th>
                                         <th>Sets</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="stats-tbody"></tbody>

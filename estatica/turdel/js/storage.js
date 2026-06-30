@@ -4,6 +4,7 @@ const STORAGE_KEYS = {
     reservas: "turdel_reservas",
     partidos: "turdel_partidos",
     estadisticas: "turdel_estadisticas",
+    canchas: "turdel_canchas",
     inicializado: "turdel_inicializado"
 };
 
@@ -67,26 +68,145 @@ function guardarEstadisticas(estadisticas) {
     guardarEnStorage(STORAGE_KEYS.estadisticas, estadisticas);
 }
 
+function obtenerCanchasStorage() {
+    const canchas = obtenerDeStorage(STORAGE_KEYS.canchas);
+    return canchas || [];
+}
+
+function guardarCanchasStorage(canchas) {
+    guardarEnStorage(STORAGE_KEYS.canchas, canchas);
+}
+
 function generarId() {
     return "id_" + Date.now() + "_" + Math.floor(Math.random() * 1000);
 }
 
+function obtenerCanchasPorDefecto() {
+    return [
+        {
+            id: "cancha1",
+            clubId: "club_norte",
+            nombre: "Cancha 1 — Club Norte",
+            ubicacion: "neuquen",
+            ubicacionLabel: "Neuquén Capital",
+            tipo: "techada",
+            imagen: "imagenes/cancha_1.jpg",
+            descripcion: "Neuquén Capital · Césped sintético · Iluminación LED",
+            horariosDisponibles: [
+                "08:00", "09:00", "10:00", "11:00", "12:00",
+                "14:00", "15:00", "16:00", "17:00", "18:00",
+                "19:00", "20:00", "21:00", "22:00"
+            ]
+        },
+        {
+            id: "cancha2",
+            clubId: "club_padel",
+            nombre: "Cancha 2 — Padel Center",
+            ubicacion: "cipolletti",
+            ubicacionLabel: "Cipolletti",
+            tipo: "abierta",
+            imagen: "imagenes/cancha_2.jpg",
+            descripcion: "Cipolletti · Vista panorámica · Vestuarios incluidos",
+            horariosDisponibles: [
+                "09:00", "10:00", "11:00", "12:00",
+                "15:00", "16:00", "17:00", "18:00",
+                "19:00", "20:00", "21:00"
+            ]
+        },
+        {
+            id: "cancha3",
+            clubId: "club_sport",
+            nombre: "Cancha 3 — Sport Club",
+            ubicacion: "plottier",
+            ubicacionLabel: "Plottier",
+            tipo: "techada",
+            imagen: "imagenes/cancha_3.jpg",
+            descripcion: "Plottier · Cancha premium · Estacionamiento",
+            horariosDisponibles: [
+                "08:00", "09:00", "10:00", "11:00",
+                "14:00", "15:00", "16:00", "17:00", "18:00",
+                "20:00", "21:00", "22:00"
+            ]
+        },
+        {
+            id: "cancha4",
+            clubId: "club_rio",
+            nombre: "Cancha 4 — Río Padel",
+            ubicacion: "centenario",
+            ubicacionLabel: "Centenario",
+            tipo: "abierta",
+            imagen: "imagenes/cancha_4.jpg",
+            descripcion: "Centenario · Cancha panorámica · Bar incluido",
+            horariosDisponibles: [
+                "08:00", "09:00", "10:00", "11:00", "12:00",
+                "14:00", "15:00", "16:00", "17:00", "18:00",
+                "19:00", "20:00", "21:00"
+            ]
+        }
+    ];
+}
+
+function obtenerUsuarioClubDemo() {
+    return {
+        id: "club_norte",
+        nombre: "Club Norte",
+        email: "club@turdel.com",
+        telefono: "+54 299 400-1111",
+        contraseña: "123456",
+        ciudad: "neuquen",
+        tipo: "club"
+    };
+}
+
+function sincronizarDatosClubes() {
+    if (obtenerCanchasStorage().length === 0) {
+        guardarCanchasStorage(obtenerCanchasPorDefecto());
+    }
+
+    const usuarios = obtenerUsuarios();
+    let clubExiste = false;
+    let i;
+
+    for (i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].tipo === "club") {
+            delete usuarios[i].apellido;
+        }
+        if (usuarios[i].email === "club@turdel.com") {
+            clubExiste = true;
+            usuarios[i].tipo = "club";
+            delete usuarios[i].apellido;
+        }
+    }
+
+    if (!clubExiste) {
+        usuarios.push(obtenerUsuarioClubDemo());
+        guardarUsuarios(usuarios);
+    } else {
+        guardarUsuarios(usuarios);
+    }
+}
+
 function inicializarDatosPorDefecto() {
     if (localStorage.getItem(STORAGE_KEYS.inicializado) === "true") {
+        sincronizarDatosClubes();
         return;
     }
 
     const usuarios = [
         {
             id: "user_demo",
-            nombre: "María",
+            nombre: "Federico",
             apellido: "González",
             email: "demo@turdel.com",
             telefono: "+54 299 400-0000",
             contraseña: "123456",
-            ciudad: "neuquen"
-        }
+            ciudad: "neuquen",
+            tipo: "jugador"
+        },
+        obtenerUsuarioClubDemo()
     ];
+
+    const canchas = obtenerCanchasPorDefecto();
 
     const reservas = [
         {
@@ -239,6 +359,7 @@ function inicializarDatosPorDefecto() {
     ];
 
     guardarUsuarios(usuarios);
+    guardarCanchasStorage(canchas);
     guardarReservas(reservas);
     guardarPartidos(partidos);
     guardarEstadisticas(estadisticas);

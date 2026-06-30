@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del club — Turdel</title>
+    <link rel="stylesheet" href="css/comun.css">
+    <link rel="stylesheet" href="css/panel-club.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="index.html">
+                    <img class="brand_logo" src="imagenes/padel_club_logo.png" alt="Logo Turdel">
+                    <div class="brand_text">
+                        <span class="brand__name">Reservas de pádel</span>
+                        <span class="brand__title">TURDEL</span>
+                    </div>
+                </a>
+                <nav class="nav" aria-label="Navegación principal">
+                    <a class="nav_link" href="index.html">Inicio</a>
+                    <a class="nav_link" href="canchas.html">Canchas</a>
+                    <a class="nav_link nav__jugador" href="reservar.html">Reservar</a>
+                    <a class="nav_link nav__jugador" href="mis-reservas.html">Mis reservas</a>
+                    <a class="nav_link nav__jugador" href="partidos.html">Partidos</a>
+                    <a class="nav_link nav__jugador" href="estadisticas.html">Estadísticas</a>
+                    <a class="nav_link nav__club is-active" href="panel-club.html">Panel del club</a>
+                    <a class="nav_link nav__login" href="login.html">Ingresar</a>
+                    <a class="nav__cta nav__registro" href="registro.html">Registrarse</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="section">
+            <div class="container">
+                <h1 class="page-title">Panel del club</h1>
+                <p class="page-subtitle">Gestioná tus canchas, definí horarios disponibles y controlá la ocupación de tus instalaciones.</p>
+
+                <div id="alert-panel-club" class="alert" role="alert" hidden></div>
+
+                <nav class="panel-tabs" aria-label="Secciones del panel">
+                    <button type="button" class="panel-tabs__btn is-active" data-tab="canchas">Mis canchas</button>
+                    <button type="button" class="panel-tabs__btn" data-tab="horarios">Horarios</button>
+                    <button type="button" class="panel-tabs__btn" data-tab="ocupacion">Ocupación</button>
+                </nav>
+
+                <section id="tab-canchas" class="panel-tab is-active" aria-labelledby="tab-canchas">
+                    <div class="panel-grid">
+                        <div class="panel-card">
+                            <h2>Tus canchas</h2>
+                            <div id="lista-canchas-club" class="canchas-club-lista"></div>
+                        </div>
+                        <div class="panel-card">
+                            <h2 id="titulo-form-cancha">Agregar cancha</h2>
+                            <form id="form-cancha-club" action="#" method="post">
+                                <input type="hidden" id="cancha-editando-id" value="">
+                                <div class="form-group">
+                                    <label for="cancha-nombre">Nombre de la cancha</label>
+                                    <input type="text" id="cancha-nombre" name="nombre" placeholder="Ej: Cancha 2 — Club Norte" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cancha-tipo">Tipo</label>
+                                    <select id="cancha-tipo" name="tipo" required>
+                                        <option value="techada">Techada</option>
+                                        <option value="abierta">Abierta</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cancha-descripcion">Descripción</label>
+                                    <textarea id="cancha-descripcion" name="descripcion" rows="3" placeholder="Servicios, superficie, etc."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cancha-imagen">Imagen</label>
+                                    <select id="cancha-imagen" name="imagen">
+                                        <option value="imagenes/cancha_1.jpg">Cancha 1</option>
+                                        <option value="imagenes/cancha_2.jpg">Cancha 2</option>
+                                        <option value="imagenes/cancha_3.jpg">Cancha 3</option>
+                                        <option value="imagenes/cancha_4.jpg">Cancha 4</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" id="btn-cancelar-cancha" class="btn btn--outline" hidden>Cancelar</button>
+                                    <button type="submit" class="btn btn--verde" id="btn-guardar-cancha">Guardar cancha</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tab-horarios" class="panel-tab" aria-labelledby="tab-horarios" hidden>
+                    <div class="panel-card">
+                        <h2>Horarios disponibles</h2>
+                        <p style="margin: 0 0 1rem; color: var(--texto-suave); font-size: 0.9rem;">
+                            Marcá los turnos en los que tu cancha acepta reservas. Los horarios no seleccionados quedarán bloqueados para los jugadores.
+                        </p>
+                        <div class="form-group">
+                            <label for="horarios-cancha-select">Cancha</label>
+                            <select id="horarios-cancha-select"></select>
+                        </div>
+                        <div id="horarios-checklist" class="horarios-checklist"></div>
+                        <div class="form-actions" style="margin-top: 1rem;">
+                            <button type="button" id="btn-guardar-horarios" class="btn btn--verde">Guardar horarios</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tab-ocupacion" class="panel-tab" aria-labelledby="tab-ocupacion" hidden>
+                    <div class="panel-card">
+                        <h2>Control de ocupación</h2>
+                        <div class="panel-filtros">
+                            <div class="form-group">
+                                <label for="ocupacion-fecha">Fecha</label>
+                                <input type="date" id="ocupacion-fecha" name="fecha">
+                            </div>
+                            <div class="form-group">
+                                <label for="ocupacion-cancha">Cancha</label>
+                                <select id="ocupacion-cancha"></select>
+                            </div>
+                        </div>
+
+                        <div class="ocupacion-resumen">
+                            <div class="stat-box">
+                                <span class="stat-box__num" id="ocupacion-libres">0</span>
+                                <span class="stat-box__label">Turnos libres</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-box__num" id="ocupacion-ocupados">0</span>
+                                <span class="stat-box__label">Turnos ocupados</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-box__num" id="ocupacion-porcentaje">0%</span>
+                                <span class="stat-box__label">Ocupación</span>
+                            </div>
+                        </div>
+
+                        <h3 style="margin: 0 0 0.75rem; font-size: 1rem; color: var(--verde-oscuro);">Mapa de turnos</h3>
+                        <div id="ocupacion-grilla" class="ocupacion-grilla"></div>
+
+                        <h3 style="margin: 0 0 0.75rem; font-size: 1rem; color: var(--verde-oscuro);">Reservas del día</h3>
+                        <div class="tabla-wrapper">
+                            <table class="tabla">
+                                <thead>
+                                    <tr>
+                                        <th>Horario</th>
+                                        <th>Jugador</th>
+                                        <th>Jugadores</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ocupacion-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-bottom">
+                <p>&copy; 2026 Turdel</p>
+            </div>
+        </footer>
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
