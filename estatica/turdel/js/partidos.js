@@ -100,9 +100,68 @@ function agregarJugadorManualAPartido(partidoId, nombreJugador) {
     return true;
 }
 
+function obtenerApellidoUsuario(usuarioId) {
+    const usuarios = obtenerUsuarios();
+    let i;
+
+    for (i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].id === usuarioId) {
+            return usuarios[i].apellido || "";
+        }
+    }
+
+    return "";
+}
+
+function obtenerNombreCreadorPartido(sesion) {
+    const apellido = obtenerApellidoUsuario(sesion.id);
+    if (apellido) {
+        return sesion.nombre + " " + apellido.charAt(0) + ".";
+    }
+    return sesion.nombre;
+}
+
+function publicarPartidoDesdeReserva(sesion, datosReserva) {
+    const creadorNombre = obtenerNombreCreadorPartido(sesion);
+    const jugadores = [creadorNombre];
+    const cantidad = datosReserva.cantidadJugadores;
+    let i;
+
+    for (i = 1; i < cantidad; i++) {
+        jugadores.push("Compañero confirmado");
+    }
+
+    const faltan = 4 - cantidad;
+    let descripcion = "Buscamos " + faltan + " jugador";
+    if (faltan !== 1) {
+        descripcion += "es";
+    }
+    descripcion += " para completar.";
+
+    if (datosReserva.notas && datosReserva.notas.trim() !== "") {
+        descripcion += " " + datosReserva.notas.trim();
+    }
+
+    const partidos = obtenerPartidos();
+    const nuevoPartido = {
+        id: generarId(),
+        creadorId: sesion.id,
+        creadorNombre: creadorNombre,
+        fecha: datosReserva.fecha,
+        horario: datosReserva.horario,
+        canchaId: datosReserva.canchaId,
+        nivel: "intermedio",
+        descripcion: descripcion,
+        jugadores: jugadores,
+        reservaId: datosReserva.reservaId
+    };
+
+    partidos.push(nuevoPartido);
+    guardarPartidos(partidos);
+    return nuevoPartido;
+}
+
 function crearTarjetaPartido(partido, sesion) {
-    console.log(partido, sesion);
-    
     const cancha = obtenerCanchaPorId(partido.canchaId);
     const tarjeta = document.createElement("article");
     const tituloNivel = partido.nivel.charAt(0).toUpperCase() + partido.nivel.slice(1);
@@ -278,7 +337,7 @@ function crearTarjetaPartido(partido, sesion) {
 
         const ayuda = document.createElement("p");
         ayuda.className = "partido-card__llenar-ayuda";
-        ayuda.textContent = "Agregá a las personas que ya conseguiste para completar el cuarto.";
+        ayuda.textContent = "Agregá a las personas que ya conseguiste para completar.";
         seccionLlenar.appendChild(ayuda);
 
         tarjeta.appendChild(seccionLlenar);
@@ -369,28 +428,17 @@ function initPartidos() {
             return;
         }
 
-        const usuarios = obtenerUsuarios();
-        let apellido = "";
-        let i;
-
-        for (i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].id === sesion.id) {
-                apellido = usuarios[i].apellido;
-                break;
-            }
-        }
-
         const partidos = obtenerPartidos();
         const nuevoPartido = {
             id: generarId(),
             creadorId: sesion.id,
-            creadorNombre: sesion.nombre + " " + apellido.charAt(0) + ".",
+            creadorNombre: obtenerNombreCreadorPartido(sesion),
             fecha: document.getElementById("partido-fecha").value,
             horario: document.getElementById("partido-horario").value,
             canchaId: document.getElementById("partido-cancha").value,
             nivel: document.getElementById("partido-nivel").value,
             descripcion: document.getElementById("partido-descripcion").value,
-            jugadores: [sesion.nombre + " " + apellido.charAt(0) + "."]
+            jugadores: [obtenerNombreCreadorPartido(sesion)]
         };
 
         partidos.push(nuevoPartido);

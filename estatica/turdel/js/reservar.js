@@ -104,6 +104,23 @@ function renderizarHorarios() {
     crearGrillaHorarios("horarios-noche", "Noche", HORARIOS_NOCHE, fecha, canchaId, reservas);
 }
 
+function actualizarOpcionCompletarPartido() {
+    const selectJugadores = document.getElementById("jugadores");
+    const grupoCompletar = document.getElementById("grupo-completar-partido");
+    const checkCompletar = document.getElementById("completar-partido");
+
+    if (!selectJugadores || !grupoCompletar || !checkCompletar) {
+        return;
+    }
+
+    const mostrarOpcion = Number(selectJugadores.value) < 4;
+
+    grupoCompletar.hidden = !mostrarOpcion;
+    if (!mostrarOpcion) {
+        checkCompletar.checked = false;
+    }
+}
+
 function initReservar() {
     if (redirigirClubSiCorresponde()) {
         return;
@@ -115,6 +132,7 @@ function initReservar() {
     const alerta = document.getElementById("alert-reserva");
     const fechaInput = document.getElementById("fecha-reserva");
     const canchaSelect = document.getElementById("cancha-reserva");
+    const selectJugadores = document.getElementById("jugadores");
     const params = new URLSearchParams(window.location.search);
 
     if (!formulario) {
@@ -154,7 +172,12 @@ function initReservar() {
         }
     }
 
+    actualizarOpcionCompletarPartido();
     renderizarHorarios();
+
+    if (selectJugadores) {
+        selectJugadores.addEventListener("change", actualizarOpcionCompletarPartido);
+    }
 
     fechaInput.addEventListener("change", function () {
         horarioSeleccionado = "";
@@ -179,7 +202,8 @@ function initReservar() {
         const fecha = fechaInput.value;
         const canchaId = canchaSelect.value;
         const horario = horarioSeleccionado;
-        const jugadores = document.getElementById("jugadores").value;
+        const cantidadJugadores = Number(document.getElementById("jugadores").value);
+        const completarPartido = document.getElementById("completar-partido").checked;
         const notas = document.getElementById("notas").value;
         const reservas = obtenerReservas();
 
@@ -207,7 +231,7 @@ function initReservar() {
                     reservas[i].fecha = fecha;
                     reservas[i].canchaId = canchaId;
                     reservas[i].horario = horario;
-                    reservas[i].jugadores = Number(jugadores);
+                    reservas[i].jugadores = cantidadJugadores;
                     reservas[i].notas = notas;
                     reservas[i].estado = "confirmada";
                     break;
@@ -225,13 +249,27 @@ function initReservar() {
                 fecha: fecha,
                 horario: horario,
                 canchaId: canchaId,
-                jugadores: Number(jugadores),
+                jugadores: cantidadJugadores,
                 notas: notas,
                 estado: "confirmada"
             };
             reservas.push(nuevaReserva);
             guardarReservas(reservas);
-            mostrarAlerta(alerta, "Turno reservado con éxito.", "exito");
+
+            let mensajeExito = "Turno reservado con éxito.";
+            if (cantidadJugadores < 4 && completarPartido) {
+                publicarPartidoDesdeReserva(sesion, {
+                    reservaId: nuevaReserva.id,
+                    fecha: fecha,
+                    horario: horario,
+                    canchaId: canchaId,
+                    cantidadJugadores: cantidadJugadores,
+                    notas: notas
+                });
+                mensajeExito = "Turno reservado y partido publicado para completar.";
+            }
+
+            mostrarAlerta(alerta, mensajeExito, "exito");
             horarioSeleccionado = "";
             document.getElementById("horario-seleccionado").value = "";
             renderizarHorarios();
@@ -240,6 +278,9 @@ function initReservar() {
 
     formulario.addEventListener("reset", function () {
         horarioSeleccionado = "";
-        setTimeout(renderizarHorarios, 0);
+        setTimeout(function () {
+            actualizarOpcionCompletarPartido();
+            renderizarHorarios();
+        }, 0);
     });
 }
