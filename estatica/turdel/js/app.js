@@ -689,6 +689,8 @@ function initReservar() {
         return;
     }
 
+    requerirSesion();
+
     const formulario = document.getElementById("form-reserva");
     const alerta = document.getElementById("alert-reserva");
     const fechaInput = document.getElementById("fecha-reserva");
