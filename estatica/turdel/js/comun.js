@@ -4,13 +4,13 @@ const TEMA_STORAGE_KEY = "turdel_tema";
 
 function obtenerTemaPreferido() {
     const guardado = localStorage.getItem(TEMA_STORAGE_KEY);
-    if (guardado === "dark" || guardado === "light") {
+    if (guardado === "oscuro" || guardado === "claro") {
         return guardado;
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return "dark";
+    if (window.matchMedia("(prefers-color-scheme: oscuro)").matches) {
+        return "oscuro";
     }
-    return "light";
+    return "claro";
 }
 
 function aplicarTema(tema) {
@@ -23,15 +23,15 @@ function actualizarBotonTema() {
         return;
     }
 
-    const esOscuro = document.documentElement.getAttribute("data-theme") === "dark";
+    const esOscuro = document.documentElement.getAttribute("data-theme") === "oscuro";
     boton.textContent = esOscuro ? "☀" : "☾";
     boton.setAttribute("aria-label", esOscuro ? "Activar modo claro" : "Activar modo oscuro");
     boton.setAttribute("title", esOscuro ? "Modo claro" : "Modo oscuro");
 }
 
 function alternarTema() {
-    const esOscuro = document.documentElement.getAttribute("data-theme") === "dark";
-    const nuevoTema = esOscuro ? "light" : "dark";
+    const esOscuro = document.documentElement.getAttribute("data-theme") === "oscuro";
+    const nuevoTema = esOscuro ? "claro" : "oscuro";
     localStorage.setItem(TEMA_STORAGE_KEY, nuevoTema);
     aplicarTema(nuevoTema);
     actualizarBotonTema();

@@ -209,6 +209,7 @@ function crearFilaEstadistica(stat) {
         "<td>" + stat.rival + "</td>" +
         '<td><span class="estado ' + claseResultado + '">' + textoResultado + "</span></td>" +
         "<td>" + formatearSets(stat) + "</td>" +
+        "<td>" + (stat.notas ? stat.notas : "-") + "</td>" +
         '<td><div class="tabla__acciones"></div></td>';
 
     const acciones = fila.querySelector(".tabla__acciones");

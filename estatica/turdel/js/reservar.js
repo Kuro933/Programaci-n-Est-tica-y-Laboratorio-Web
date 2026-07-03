@@ -106,18 +106,19 @@ function renderizarHorarios() {
 
 function actualizarOpcionCompletarPartido() {
     const selectJugadores = document.getElementById("jugadores");
-    const grupoCompletar = document.getElementById("grupo-completar-partido");
     const checkCompletar = document.getElementById("completar-partido");
 
-    if (!selectJugadores || !grupoCompletar || !checkCompletar) {
+    if (!selectJugadores || !checkCompletar) {
         return;
     }
 
     const mostrarOpcion = Number(selectJugadores.value) < 4;
-
-    grupoCompletar.hidden = !mostrarOpcion;
     if (!mostrarOpcion) {
         checkCompletar.checked = false;
+        checkCompletar.disabled = true;
+    }
+    else {
+        checkCompletar.disabled = false;
     }
 }
 
@@ -176,7 +177,9 @@ function initReservar() {
     renderizarHorarios();
 
     if (selectJugadores) {
-        selectJugadores.addEventListener("change", actualizarOpcionCompletarPartido);
+        selectJugadores.addEventListener("change", function () {
+            actualizarOpcionCompletarPartido();
+        });
     }
 
     fechaInput.addEventListener("change", function () {
