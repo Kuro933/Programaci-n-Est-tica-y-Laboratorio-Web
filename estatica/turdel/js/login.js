@@ -26,7 +26,7 @@ function initLogin() {
             marcarGrupoValido(email.parentElement);
         }
 
-        if (contraseña.value.length < 6) {
+        if (contraseña.value.trim().length < 6 && contraseña.value.trim() !== "") {
             errores.push("La contraseña es obligatoria (mínimo 6 caracteres).");
             marcarGrupoError(contraseña.parentElement);
         } else {

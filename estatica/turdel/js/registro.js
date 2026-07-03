@@ -103,7 +103,7 @@ function initRegistro() {
             marcarGrupoValido(telefono.parentElement);
         }
 
-        if (contraseña.value.length < 6) {
+        if (contraseña.value.trim().length < 6 && contraseña.value.trim() !== "") {
             errores.push("La contraseña debe tener al menos 6 caracteres.");
             marcarGrupoError(contraseña.parentElement);
         } else {
