@@ -10,7 +10,7 @@
 .filtros h2 {
     margin: 0 0 1rem;
     font-size: 1.1rem;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .canchas-grid {
@@ -58,33 +58,33 @@
     padding: 0.2rem 0.55rem;
     border-radius: 999px;
     background: var(--verde-suave);
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .tag--techada {
-    background: #dbeafe;
-    color: #1e40af;
+    background: var(--info-bg);
+    color: var(--info-text);
 }
 
 .tag--abierta {
-    background: #fef3c7;
-    color: #92400e;
+    background: var(--aviso-bg);
+    color: var(--aviso-text);
 }
 
 .tag--disponible {
-    background: #d1fae5;
-    color: #065f46;
+    background: var(--exito-bg);
+    color: var(--exito-text);
 }
 
 .tag--ocupada {
-    background: #fee2e2;
-    color: #991b1b;
+    background: var(--peligro-bg);
+    color: var(--peligro-text);
 }
 
 .cancha-card h3 {
     margin: 0;
     font-size: 1.15rem;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .cancha-card p {

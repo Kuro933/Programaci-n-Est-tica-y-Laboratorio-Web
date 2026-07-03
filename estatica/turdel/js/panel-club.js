@@ -82,7 +82,7 @@ function editarCanchaClub(cancha) {
     document.getElementById("btn-cancelar-cancha").hidden = false;
 }
 
-function eliminarCanchaClub(canchaId, sesion) {
+async function eliminarCanchaClub(canchaId, sesion) {
     const alerta = document.getElementById("alert-panel-club");
     const reservas = obtenerReservas();
     let i;
@@ -94,7 +94,13 @@ function eliminarCanchaClub(canchaId, sesion) {
         }
     }
 
-    if (!confirm("¿Eliminar esta cancha? Esta acción no se puede deshacer.")) {
+    const confirmado = await confirmarAccion("¿Eliminar esta cancha? Esta acción no se puede deshacer.", {
+        titulo: "Eliminar cancha",
+        textoConfirmar: "Sí, eliminar",
+        peligro: true
+    });
+
+    if (!confirmado) {
         return;
     }
 

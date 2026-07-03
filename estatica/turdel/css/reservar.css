@@ -8,7 +8,7 @@
 .horarios-section h3 {
     margin: 0 0 0.75rem;
     font-size: 1rem;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .horarios-leyenda {
@@ -64,7 +64,7 @@
 
 .horario--disponible {
     background: var(--verde-suave);
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
     border-color: rgba(45, 106, 79, 0.25);
 }
 
@@ -74,8 +74,8 @@
 }
 
 .horario--ocupado {
-    background: #e9ecef;
-    color: #868e96;
+    background: var(--neutral-bg);
+    color: var(--neutral-text);
     cursor: not-allowed;
     text-decoration: line-through;
 }
@@ -83,7 +83,7 @@
 .horario--seleccionado {
     background: var(--verde-claro);
     color: var(--blanco);
-    border-color: var(--verde-oscuro);
+    border-color: var(--encabezado);
     box-shadow: 0 0 0 3px rgba(64, 145, 108, 0.35);
 }
 

@@ -97,8 +97,8 @@ function initCanchas() {
         aplicarFiltrosCanchas();
     });
 
-    document.getElementById("filtro-ubicacion").addEventListener("change", aplicarFiltrosCanchas);
-    document.getElementById("filtro-tipo").addEventListener("change", aplicarFiltrosCanchas);
-    document.getElementById("filtro-disponibilidad").addEventListener("change", aplicarFiltrosCanchas);
-    document.getElementById("filtro-fecha").addEventListener("change", aplicarFiltrosCanchas);
+    // document.getElementById("filtro-ubicacion").addEventListener("change", aplicarFiltrosCanchas);
+    // document.getElementById("filtro-tipo").addEventListener("change", aplicarFiltrosCanchas);
+    // document.getElementById("filtro-disponibilidad").addEventListener("change", aplicarFiltrosCanchas);
+    // document.getElementById("filtro-fecha").addEventListener("change", aplicarFiltrosCanchas);
 }

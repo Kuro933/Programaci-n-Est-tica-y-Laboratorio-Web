@@ -1,5 +1,61 @@
 ﻿// ========== Utilidades generales ==========
 
+const TEMA_STORAGE_KEY = "turdel_tema";
+
+function obtenerTemaPreferido() {
+    const guardado = localStorage.getItem(TEMA_STORAGE_KEY);
+    if (guardado === "dark" || guardado === "light") {
+        return guardado;
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+    }
+    return "light";
+}
+
+function aplicarTema(tema) {
+    document.documentElement.setAttribute("data-theme", tema);
+}
+
+function actualizarBotonTema() {
+    const boton = document.querySelector(".theme-toggle");
+    if (!boton) {
+        return;
+    }
+
+    const esOscuro = document.documentElement.getAttribute("data-theme") === "dark";
+    boton.textContent = esOscuro ? "☀" : "☾";
+    boton.setAttribute("aria-label", esOscuro ? "Activar modo claro" : "Activar modo oscuro");
+    boton.setAttribute("title", esOscuro ? "Modo claro" : "Modo oscuro");
+}
+
+function alternarTema() {
+    const esOscuro = document.documentElement.getAttribute("data-theme") === "dark";
+    const nuevoTema = esOscuro ? "light" : "dark";
+    localStorage.setItem(TEMA_STORAGE_KEY, nuevoTema);
+    aplicarTema(nuevoTema);
+    actualizarBotonTema();
+}
+
+function inicializarTema() {
+    aplicarTema(obtenerTemaPreferido());
+
+    const nav = document.querySelector(".nav");
+    if (!nav) {
+        return;
+    }
+
+    if (!nav.querySelector(".theme-toggle")) {
+        const boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "theme-toggle";
+        boton.addEventListener("click", alternarTema);
+        nav.appendChild(boton);
+    }
+
+    actualizarBotonTema();
+}
+
 function esEmailValido(email) {
     const patron = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return patron.test(email.trim());
@@ -18,6 +74,153 @@ function ocultarAlerta(elemento) {
     if (elemento) {
         elemento.hidden = true;
     }
+}
+
+const MODAL_ICONOS = {
+    exito: "✓",
+    info: "ℹ",
+    aviso: "!",
+    peligro: "?"
+};
+
+const MODAL_TITULOS = {
+    exito: "¡Listo!",
+    info: "Información",
+    aviso: "Atención",
+    peligro: "¿Estás seguro?"
+};
+
+let modalResolver = null;
+
+function asegurarModal() {
+    if (document.getElementById("turdel-modal")) {
+        return;
+    }
+
+    const overlay = document.createElement("div");
+    overlay.id = "turdel-modal";
+    overlay.className = "modal-overlay";
+    overlay.innerHTML =
+        '<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">' +
+            '<div class="modal__icon" id="modal-icon" aria-hidden="true"></div>' +
+            '<h2 class="modal__titulo" id="modal-titulo"></h2>' +
+            '<p class="modal__mensaje" id="modal-mensaje"></p>' +
+            '<div class="modal__acciones" id="modal-acciones"></div>' +
+        "</div>";
+
+    overlay.addEventListener("click", function (event) {
+        if (event.target === overlay) {
+            cerrarModal(false);
+        }
+    });
+
+    document.body.appendChild(overlay);
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && overlay.classList.contains("is-open")) {
+            cerrarModal(false);
+        }
+    });
+}
+
+function cerrarModal(resultado) {
+    const overlay = document.getElementById("turdel-modal");
+    if (!overlay || !overlay.classList.contains("is-open")) {
+        return;
+    }
+
+    overlay.classList.remove("is-open");
+    overlay.setAttribute("aria-hidden", "true");
+
+    if (modalResolver) {
+        const resolver = modalResolver;
+        modalResolver = null;
+        resolver(resultado);
+    }
+}
+
+function configurarModal(mensaje, opciones) {
+    asegurarModal();
+
+    const overlay = document.getElementById("turdel-modal");
+    const icono = document.getElementById("modal-icon");
+    const titulo = document.getElementById("modal-titulo");
+    const cuerpo = document.getElementById("modal-mensaje");
+    const acciones = document.getElementById("modal-acciones");
+    const tipo = opciones.tipo || "info";
+
+    icono.className = "modal__icon modal__icon--" + tipo;
+    icono.textContent = MODAL_ICONOS[tipo] || MODAL_ICONOS.info;
+    titulo.textContent = opciones.titulo || MODAL_TITULOS[tipo] || MODAL_TITULOS.info;
+    cuerpo.textContent = mensaje;
+    acciones.innerHTML = "";
+
+    return {
+        overlay: overlay,
+        acciones: acciones
+    };
+}
+
+function mostrarAviso(mensaje, opciones) {
+    opciones = opciones || {};
+
+    return new Promise(function (resolver) {
+        const modal = configurarModal(mensaje, opciones);
+        const boton = document.createElement("button");
+        boton.type = "button";
+        boton.className = "btn btn--verde";
+        boton.textContent = opciones.textoBoton || "Aceptar";
+        boton.addEventListener("click", function () {
+            cerrarModal(true);
+        });
+
+        modal.acciones.appendChild(boton);
+        modalResolver = function (confirmado) {
+            if (opciones.onCerrar) {
+                opciones.onCerrar();
+            }
+            resolver(confirmado);
+        };
+
+        modal.overlay.classList.add("is-open");
+        modal.overlay.setAttribute("aria-hidden", "false");
+        boton.focus();
+    });
+}
+
+function confirmarAccion(mensaje, opciones) {
+    opciones = opciones || {};
+
+    return new Promise(function (resolver) {
+        const modal = configurarModal(mensaje, {
+            tipo: opciones.peligro ? "peligro" : "aviso",
+            titulo: opciones.titulo || (opciones.peligro ? "¿Estás seguro?" : "Confirmar")
+        });
+
+        const btnCancelar = document.createElement("button");
+        btnCancelar.type = "button";
+        btnCancelar.className = "btn btn--outline";
+        btnCancelar.textContent = opciones.textoCancelar || "Cancelar";
+        btnCancelar.addEventListener("click", function () {
+            cerrarModal(false);
+        });
+
+        const btnConfirmar = document.createElement("button");
+        btnConfirmar.type = "button";
+        btnConfirmar.className = opciones.peligro ? "btn btn--peligro" : "btn btn--verde";
+        btnConfirmar.textContent = opciones.textoConfirmar || "Confirmar";
+        btnConfirmar.addEventListener("click", function () {
+            cerrarModal(true);
+        });
+
+        modal.acciones.appendChild(btnCancelar);
+        modal.acciones.appendChild(btnConfirmar);
+
+        modalResolver = resolver;
+        modal.overlay.classList.add("is-open");
+        modal.overlay.setAttribute("aria-hidden", "false");
+        btnConfirmar.focus();
+    });
 }
 
 function sincronizarSesion() {
@@ -46,8 +249,12 @@ function requerirSesion() {
     sincronizarSesion();
     const sesion = obtenerSesion();
     if (!sesion) {
-        alert("Debés iniciar sesión para acceder a esta sección.");
-        window.location.href = "login.html";
+        mostrarAviso("Debés iniciar sesión para acceder a esta sección.", {
+            tipo: "aviso",
+            onCerrar: function () {
+                window.location.href = "login.html";
+            }
+        });
         return null;
     }
     return sesion;
@@ -70,8 +277,12 @@ function requerirSesionClub() {
         return null;
     }
     if (!esSesionClub(sesion)) {
-        alert("Esta sección es solo para clubes registrados.");
-        window.location.href = "index.html";
+        mostrarAviso("Esta sección es solo para clubes registrados.", {
+            tipo: "aviso",
+            onCerrar: function () {
+                window.location.href = "index.html";
+            }
+        });
         return null;
     }
     return sesion;
@@ -138,12 +349,7 @@ function actualizarNavegacion() {
                 linkRegistro.hidden = true;
                 linkRegistro.classList.add("nav--oculto");
             } else {
-                linkRegistro.hidden = false;
-                linkRegistro.classList.remove("nav--oculto");
-                linkRegistro.textContent = "Mi cuenta";
-                linkRegistro.href = "mis-reservas.html";
-                linkRegistro.classList.remove("nav__cta");
-                linkRegistro.classList.add("nav_link");
+                linkRegistro.hidden = true;
             }
         }
     } else {

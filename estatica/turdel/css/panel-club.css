@@ -49,7 +49,7 @@
 .panel-card h2 {
     margin: 0 0 1rem;
     font-size: 1.15rem;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .canchas-club-lista {
@@ -132,17 +132,17 @@
 
 .ocupacion-celda--libre {
     background: var(--verde-suave);
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .ocupacion-celda--ocupado {
-    background: #fde8e8;
-    color: #9b2226;
+    background: var(--peligro-bg);
+    color: var(--peligro-text);
 }
 
 .ocupacion-celda--cerrado {
-    background: #e9ecef;
-    color: var(--texto-suave);
+    background: var(--neutral-bg);
+    color: var(--neutral-text);
 }
 
 .panel-filtros {

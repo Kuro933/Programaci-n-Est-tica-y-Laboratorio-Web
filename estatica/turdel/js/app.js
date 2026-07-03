@@ -2,6 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     inicializarDatosPorDefecto();
+    inicializarTema();
     actualizarNavegacion();
 
     const pagina = obtenerNombrePagina();

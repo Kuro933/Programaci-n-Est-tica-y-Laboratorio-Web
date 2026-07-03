@@ -135,8 +135,14 @@ function editarEstadistica(id) {
     document.getElementById("form-stats").scrollIntoView({ behavior: "smooth" });
 }
 
-function eliminarEstadistica(id) {
-    if (!confirm("¿Eliminar este resultado del historial?")) {
+async function eliminarEstadistica(id) {
+    const confirmado = await confirmarAccion("¿Eliminar este resultado del historial?", {
+        titulo: "Eliminar resultado",
+        textoConfirmar: "Sí, eliminar",
+        peligro: true
+    });
+
+    if (!confirmado) {
         return;
     }
 

@@ -9,7 +9,7 @@
 .partidos-crear h2,
 .partidos-lista h2 {
     font-size: 1.2rem;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
     margin-bottom: 1rem;
 }
 
@@ -29,7 +29,7 @@
 
 .partido-card h3 {
     margin: 0 0 0.5rem;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .partido-card__meta {
@@ -50,19 +50,19 @@
     padding: 0.25rem 0.6rem;
     border-radius: 999px;
     background: var(--verde-suave);
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
     font-weight: 600;
 }
 
 .jugador-badge--libre {
-    background: #e9ecef;
-    color: var(--texto-suave);
-    border: 1px dashed #adb5bd;
+    background: var(--neutral-bg);
+    color: var(--neutral-text);
+    border: 1px dashed var(--neutral-borde);
 }
 
 .jugador-badge--creador {
-    background: #dbeafe;
-    color: #1e40af;
+    background: var(--info-bg);
+    color: var(--info-text);
 }
 
 .partido-card__header {
@@ -90,24 +90,24 @@
 }
 
 .partido-badge--propio {
-    background: #fef3c7;
-    color: #92400e;
+    background: var(--aviso-bg);
+    color: var(--aviso-text);
 }
 
 .partido-badge--completo {
-    background: #d1fae5;
-    color: #065f46;
+    background: var(--exito-bg);
+    color: var(--exito-text);
 }
 
 .partido-badge--inscripto {
     background: var(--verde-suave);
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .partido-card__inscripcion {
     margin: 0 0 0.5rem;
     font-size: 0.9rem;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .partido-card__organizador {
@@ -127,7 +127,7 @@
     margin: 0 0 0.4rem;
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .partido-card__acciones {
@@ -147,7 +147,7 @@
     margin: 0 0 0.6rem;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--verde-oscuro);
+    color: var(--encabezado);
 }
 
 .partido-card__llenar-form {
@@ -161,9 +161,11 @@
     flex: 1;
     min-width: 140px;
     padding: 0.5rem 0.7rem;
-    border: 1px solid #c5d4e0;
+    border: 1px solid var(--input-borde);
     border-radius: 8px;
     font: inherit;
+    background: var(--input-fondo);
+    color: var(--texto);
 }
 
 .partido-card__llenar-form input:focus {

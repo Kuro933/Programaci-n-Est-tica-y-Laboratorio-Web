@@ -85,8 +85,14 @@ function cargarTablaReservas() {
     }
 }
 
-function cancelarReserva(id) {
-    if (!confirm("¿Confirmás la cancelación de esta reserva?")) {
+async function cancelarReserva(id) {
+    const confirmado = await confirmarAccion("¿Confirmás la cancelación de esta reserva?", {
+        titulo: "Cancelar reserva",
+        textoConfirmar: "Sí, cancelar",
+        peligro: true
+    });
+
+    if (!confirmado) {
         return;
     }
 
@@ -102,7 +108,7 @@ function cancelarReserva(id) {
 
     guardarReservas(reservas);
     cargarTablaReservas();
-    alert("Reserva cancelada.");
+    mostrarAviso("Reserva cancelada.", { tipo: "exito" });
 }
 
 function mostrarFormularioModificar(reserva) {
@@ -185,7 +191,7 @@ function initMisReservas() {
             guardarReservas(reservas);
             document.getElementById("modificar-section").hidden = true;
             cargarTablaReservas();
-            alert("Reserva modificada con éxito.");
+            mostrarAviso("Reserva modificada con éxito.", { tipo: "exito" });
         });
     }
 
